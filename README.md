@@ -2,7 +2,7 @@
 
 把微信读书同步到 Notion 的数据，发布成一个公开静态书架。
 
-公开站：<https://weread.malinkang.com/>
+公开站：<https://reading.malinkang.com/>
 
 ## 架构
 
@@ -15,7 +15,7 @@ data/public-snapshot.json   ← 清洗后的公开快照，提交回仓库
     ▼
 静态 HTML + 搜索索引        ← 所有书籍页预渲染
     ▼
-https://weread.malinkang.com
+https://reading.malinkang.com
 ```
 
 页面渲染不依赖 Notion API。Notion token 只存在于 GitHub Actions Secret，不会进入浏览器或 Cloudflare 构建环境。
@@ -68,7 +68,7 @@ python sync_notion.py --output data/public-snapshot.json --print-summary
 python build_site.py \
   --snapshot data/public-snapshot.json \
   --output site \
-  --site-url https://weread.malinkang.com
+  --site-url https://reading.malinkang.com
 ```
 
 ## GitHub Actions
@@ -105,7 +105,7 @@ python build_site.py \
 | Variable | 默认值 | 说明 |
 |---|---|---|
 | `PUBLIC_SITE_TITLE` | `读书记` | 站点名 |
-| `PUBLIC_SITE_URL` | `https://weread.malinkang.com` | 自定义域名 |
+| `PUBLIC_SITE_URL` | `https://reading.malinkang.com` | 自定义域名 |
 | `PUBLIC_SITE_DESCRIPTION` | 内置文案 | 首页描述 |
 | `PUBLIC_INCLUDE_HIGHLIGHTS` | `true` | 是否公开划线 |
 | `PUBLIC_INCLUDE_REVIEWS` | `false` | 是否公开想法/书评 |
@@ -119,12 +119,23 @@ python build_site.py \
 项目：`weread-reading`
 
 - 生产分支：`main`
-- 构建命令：`pip install -r requirements.txt && python build_site.py --snapshot data/public-snapshot.json --output site --site-url https://weread.malinkang.com`
+- 构建命令：`pip install -r requirements.txt && python build_site.py --snapshot data/public-snapshot.json --output site --site-url https://reading.malinkang.com`
 - 输出目录：`site`
 - Python：`3.12`
-- 自定义域名：`weread.malinkang.com`
+- 自定义域名：`reading.malinkang.com`
+- 域名入口：Cloudflare Worker `weread-reading-edge` 代理到 `weread-reading.pages.dev`
 
 首次连接 Git 后，Cloudflare Pages 会在 `main` 有新提交时自动构建。GitHub Actions 只提交公开 JSON 快照，不直接部署页面。
+
+### 域名代理
+
+Cloudflare Pages 目前会拦截 `malinkang.com` 下新增的子域名，因此 `reading.malinkang.com` 由仓库内的 `edge/worker.js` 代理到 Pages：
+
+```bash
+wrangler deploy --config edge/wrangler.jsonc --domain reading.malinkang.com
+```
+
+如果以后 Cloudflare 解除限制，可以改为在 Pages 项目中直接绑定自定义域名，并删除这个代理 Worker。
 
 ## 数据与隐私
 

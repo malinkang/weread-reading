@@ -111,7 +111,17 @@ def test_stats_page_has_year_switch_and_custom_heatmap_tooltips(tmp_path: Path):
     assert 'id="heatmap-tooltip"' in stats
     assert stats.count('data-heatmap-panel="') >= 2
     assert "data-heatmap-cell" in stats
-    assert "悬停或聚焦方块" in stats
+    assert "READING CALENDAR" not in stats
+    assert "<h2>阅读热力图</h2>" not in stats
+    assert "按自然年查看" not in stats
+    assert "悬停或聚焦方块" not in stats
+    assert "左右滑动查看全年" not in stats
+    assert "<span>年份</span>" not in stats
+    assert 'class="heatmap-year-summary"' not in stats
+    assert 'class="heatmap-months"' not in stats
+    assert 'class="heatmap-weekdays"' not in stats
+    assert "<span>少</span>" not in stats
+    assert "<span>多</span>" not in stats
 
     css = next((output / "assets").glob("style.*.css")).read_text(encoding="utf-8")
     script = next((output / "assets").glob("app.*.js")).read_text(encoding="utf-8")

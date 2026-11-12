@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-12T16:29:22+08:00",
+  "generated_at": "2026-11-12T18:05:29+08:00",
   "site": {
     "title": "读书记",
     "description": "我的微信读书书架，按阅读时间、评分和划线整理。",
@@ -12,6 +12,7 @@
     "highlights": 3721,
     "notes": 0,
     "daily_records": 2237,
+    "book_daily_records": 0,
     "include_highlights": true,
     "include_reviews": false
   },

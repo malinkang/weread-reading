@@ -305,14 +305,14 @@ def test_extract_book_handles_string_publication_date_and_skips_non_books():
     assert book["published"] == "1993-01-01"
 
 
-def test_build_snapshot_accepts_books_database_id_and_discovers_relations():
+def test_build_snapshot_discovers_reading_log_before_configured_source():
     class FakeAPI:
         ids = {
             "book-db": "book-ds",
             "author-db": "author-ds",
             "category-db": "category-ds",
-            "reading-log-db": "reading-log-ds",
         }
+        queried = set()
         sources = {
             "book-ds": {
                 "id": "book-ds",
@@ -325,6 +325,10 @@ def test_build_snapshot_accepts_books_database_id_and_discovers_relations():
                     "分类": {
                         "type": "relation",
                         "relation": {"database_id": "category-db"},
+                    },
+                    "阅读记录": {
+                        "type": "relation",
+                        "relation": {"data_source_id": "reading-log-ds"},
                     },
                 },
             },
@@ -360,7 +364,7 @@ def test_build_snapshot_accepts_books_database_id_and_discovers_relations():
             ],
             "author-db": [_page("author-page", {"Name": _title("刘慈欣")})],
             "category-db": [_page("category-page", {"Name": _title("科幻")})],
-            "reading-log-db": [
+            "reading-log-ds": [
                 _page(
                     "reading-log-1",
                     {
@@ -383,16 +387,18 @@ def test_build_snapshot_accepts_books_database_id_and_discovers_relations():
             return self.sources[data_source_id]
 
         def query_all(self, data_source_id, **kwargs):
+            self.queried.add(data_source_id)
             return self.rows[data_source_id]
 
+    fake_api = FakeAPI()
     snapshot = build_snapshot(
         _config(
             books_data_source_id="book-db",
             authors_data_source_id=None,
             categories_data_source_id=None,
-            reading_log_data_source_id="reading-log-db",
+            reading_log_data_source_id="stale-empty-reading-log",
         ),
-        api=FakeAPI(),
+        api=fake_api,
     )
     assert snapshot["books"][0]["title"] == "三体"
     assert snapshot["books"][0]["authors"] == ["刘慈欣"]
@@ -401,5 +407,8 @@ def test_build_snapshot_accepts_books_database_id_and_discovers_relations():
         {"date": "2026-01-02", "seconds": 1800}
     ]
     assert snapshot["books"][0]["reading_days"] == 1
+    assert snapshot["meta"]["book_daily_records"] == 1
+    assert "reading-log-ds" in fake_api.queried
+    assert "stale-empty-reading-log" not in fake_api.queried
     assert "page_id" not in snapshot["books"][0]
     assert "book-page" not in str(snapshot)

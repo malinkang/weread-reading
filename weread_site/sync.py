@@ -614,21 +614,31 @@ def build_snapshot(config: SyncConfig, api: NotionAPI | None = None) -> dict[str
     daily_pages, daily_title_key = _optional_pages(
         api, config.daily_data_source_id, "daily reading"
     )
-    reading_log_pages: list[dict[str, Any]] | None = None
-    reading_log_title_key: str | None = None
-    if not daily_pages and config.reading_log_data_source_id:
-        reading_log_pages, reading_log_title_key = _optional_pages(
-            api, config.reading_log_data_source_id, "reading log"
-        )
+    discovered_reading_log_data_source_id = find_relation_data_source(
+        books_data_source,
+        ("阅读记录", "Reading Log", "ReadingLog", "Reading log"),
+    )
+    reading_log_data_source_id = (
+        discovered_reading_log_data_source_id or config.reading_log_data_source_id
+    )
+    if discovered_reading_log_data_source_id:
+        LOG.info("reading log data source auto-discovered from books relation")
+    elif config.reading_log_data_source_id:
+        LOG.info("reading log data source loaded from configuration")
+
+    reading_log_pages, reading_log_title_key = _optional_pages(
+        api,
+        reading_log_data_source_id,
+        "reading log",
+        strict=bool(
+            config.reading_log_data_source_id
+            and not discovered_reading_log_data_source_id
+        ),
+    )
+    if not daily_pages and reading_log_pages:
+        LOG.info("using reading log as the daily reading source")
         daily_pages, daily_title_key = reading_log_pages, reading_log_title_key
     daily = normalize_daily(daily_pages, daily_title_key)
-    if config.reading_log_data_source_id and reading_log_pages is None:
-        reading_log_pages, reading_log_title_key = _optional_pages(
-            api,
-            config.reading_log_data_source_id,
-            "book reading log",
-            strict=False,
-        )
     book_lookup = dict(page_to_book)
     for book in books:
         source_id = as_text(book.get("source_id"))

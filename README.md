@@ -98,7 +98,7 @@ python build_site.py \
 | `WEREAD_BOOKMARKS_DATABASE_ID` | 否 | 划线数据库 |
 | `WEREAD_CHAPTERS_DATABASE_ID` | 否 | 章节数据库 |
 | `WEREAD_DAILY_DATABASE_ID` | 否 | 每日阅读时长数据库 |
-| `WEREAD_READING_LOG_DATABASE_ID` | 否 | 按书每日阅读时长；默认从书籍库的 `阅读记录` 关系自动发现，配置值仅作兜底 |
+| `WEREAD_READING_LOG_DATABASE_ID` | 否 | 按书每日阅读时长；优先使用配置值，未配置时从书籍库的 `阅读记录` 关系自动发现 |
 
 可选 Repository Variables：
 

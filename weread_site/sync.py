@@ -37,6 +37,12 @@ from .notion_api import NotionAPI, NotionAPIError, find_title_key, page_icon_url
 
 
 LOG = logging.getLogger("weread-reading.sync")
+READING_LOG_RELATION_NAMES = (
+    "阅读记录",
+    "Reading Log",
+    "ReadingLog",
+    "Reading log",
+)
 
 
 @dataclass
@@ -174,6 +180,19 @@ def find_relation_data_source(
         if target:
             return str(target)
     return None
+
+
+def _select_reading_log_data_source(
+    books_data_source: dict[str, Any],
+    configured_data_source_id: str | None,
+) -> tuple[str | None, bool]:
+    discovered = find_relation_data_source(
+        books_data_source,
+        READING_LOG_RELATION_NAMES,
+    )
+    if configured_data_source_id:
+        return configured_data_source_id, False
+    return discovered, bool(discovered)
 
 
 def _optional_pages(
@@ -614,26 +633,22 @@ def build_snapshot(config: SyncConfig, api: NotionAPI | None = None) -> dict[str
     daily_pages, daily_title_key = _optional_pages(
         api, config.daily_data_source_id, "daily reading"
     )
-    discovered_reading_log_data_source_id = find_relation_data_source(
-        books_data_source,
-        ("阅读记录", "Reading Log", "ReadingLog", "Reading log"),
+    reading_log_data_source_id, reading_log_is_discovered = (
+        _select_reading_log_data_source(
+            books_data_source,
+            config.reading_log_data_source_id,
+        )
     )
-    reading_log_data_source_id = (
-        discovered_reading_log_data_source_id or config.reading_log_data_source_id
-    )
-    if discovered_reading_log_data_source_id:
+    if reading_log_is_discovered:
         LOG.info("reading log data source auto-discovered from books relation")
-    elif config.reading_log_data_source_id:
+    elif reading_log_data_source_id:
         LOG.info("reading log data source loaded from configuration")
 
     reading_log_pages, reading_log_title_key = _optional_pages(
         api,
         reading_log_data_source_id,
         "reading log",
-        strict=bool(
-            config.reading_log_data_source_id
-            and not discovered_reading_log_data_source_id
-        ),
+        strict=bool(config.reading_log_data_source_id),
     )
     if not daily_pages and reading_log_pages:
         LOG.info("using reading log as the daily reading source")

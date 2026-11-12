@@ -3,6 +3,7 @@ from weread_site.sync import (
     _attach_annotations,
     _attach_book_daily,
     _extract_book,
+    _select_reading_log_data_source,
     build_snapshot,
     config_from_env,
     find_relation_data_source,
@@ -174,6 +175,24 @@ def test_relation_database_is_discovered_from_books_schema():
     assert find_relation_data_source(data_source, ("书单",)) is None
 
 
+def test_configured_reading_log_takes_precedence_over_relation_discovery():
+    books_data_source = {
+        "properties": {
+            "阅读记录": {
+                "type": "relation",
+                "relation": {"data_source_id": "discovered-log"},
+            },
+        }
+    }
+    assert _select_reading_log_data_source(
+        books_data_source, "configured-log"
+    ) == ("configured-log", False)
+    assert _select_reading_log_data_source(books_data_source, None) == (
+        "discovered-log",
+        True,
+    )
+
+
 def test_attach_book_daily_uses_book_relation_and_sums_duplicate_days():
     book = {
         "page_id": "book-page-1",
@@ -305,7 +324,7 @@ def test_extract_book_handles_string_publication_date_and_skips_non_books():
     assert book["published"] == "1993-01-01"
 
 
-def test_build_snapshot_discovers_reading_log_before_configured_source():
+def test_build_snapshot_discovers_reading_log_when_unconfigured():
     class FakeAPI:
         ids = {
             "book-db": "book-ds",
@@ -396,7 +415,7 @@ def test_build_snapshot_discovers_reading_log_before_configured_source():
             books_data_source_id="book-db",
             authors_data_source_id=None,
             categories_data_source_id=None,
-            reading_log_data_source_id="stale-empty-reading-log",
+            reading_log_data_source_id=None,
         ),
         api=fake_api,
     )
@@ -409,6 +428,5 @@ def test_build_snapshot_discovers_reading_log_before_configured_source():
     assert snapshot["books"][0]["reading_days"] == 1
     assert snapshot["meta"]["book_daily_records"] == 1
     assert "reading-log-ds" in fake_api.queried
-    assert "stale-empty-reading-log" not in fake_api.queried
     assert "page_id" not in snapshot["books"][0]
     assert "book-page" not in str(snapshot)

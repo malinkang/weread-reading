@@ -648,7 +648,7 @@ def build_snapshot(config: SyncConfig, api: NotionAPI | None = None) -> dict[str
         api,
         reading_log_data_source_id,
         "reading log",
-        strict=bool(config.reading_log_data_source_id),
+        strict=False,
     )
     if not daily_pages and reading_log_pages:
         LOG.info("using reading log as the daily reading source")
@@ -665,9 +665,19 @@ def build_snapshot(config: SyncConfig, api: NotionAPI | None = None) -> dict[str
         reading_log_pages or [],
         reading_log_title_key,
     )
+    book_daily_source = "reading log"
+    if not book_daily_records and daily_pages and daily_pages is not reading_log_pages:
+        book_daily_records = _attach_book_daily(
+            books,
+            book_lookup,
+            daily_pages,
+            daily_title_key,
+        )
+        book_daily_source = "daily reading"
     if book_daily_records:
         LOG.info(
-            "attached per-book daily reading to %d books (%d book-days)",
+            "attached per-book daily reading from %s to %d books (%d book-days)",
+            book_daily_source,
             sum(1 for book in books if book.get("reading_daily")),
             book_daily_records,
         )

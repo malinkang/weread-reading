@@ -430,3 +430,69 @@ def test_build_snapshot_discovers_reading_log_when_unconfigured():
     assert "reading-log-ds" in fake_api.queried
     assert "page_id" not in snapshot["books"][0]
     assert "book-page" not in str(snapshot)
+
+
+def test_build_snapshot_falls_back_to_daily_rows_for_book_heatmap():
+    class FakeAPI:
+        sources = {
+            "book-ds": {
+                "id": "book-ds",
+                "properties": {"书名": {"type": "title"}},
+            },
+            "daily-ds": {
+                "id": "daily-ds",
+                "properties": {
+                    "标题": {"type": "title"},
+                    "日期": {"type": "date"},
+                    "时长": {"type": "number"},
+                    "书架": {"type": "relation"},
+                },
+            },
+        }
+        rows = {
+            "book-ds": [
+                _page(
+                    "book-page",
+                    {
+                        "书名": _title("三体"),
+                        "BookId": _rich("weread-1"),
+                    },
+                )
+            ],
+            "daily-ds": [
+                _page(
+                    "daily-1",
+                    {
+                        "标题": _title("2026年01月03日"),
+                        "日期": {
+                            "type": "date",
+                            "date": {"start": "2026-01-03"},
+                        },
+                        "时长": {"type": "number", "number": 1200},
+                        "书架": _relation("book-page"),
+                    },
+                )
+            ],
+        }
+
+        def resolve_data_source_id(self, identifier):
+            return identifier
+
+        def retrieve_data_source(self, data_source_id):
+            return self.sources[data_source_id]
+
+        def query_all(self, data_source_id, **kwargs):
+            return self.rows[data_source_id]
+
+    snapshot = build_snapshot(
+        _config(
+            books_data_source_id="book-ds",
+            daily_data_source_id="daily-ds",
+        ),
+        api=FakeAPI(),
+    )
+    assert snapshot["daily"] == [{"date": "2026-01-03", "seconds": 1200}]
+    assert snapshot["books"][0]["reading_daily"] == [
+        {"date": "2026-01-03", "seconds": 1200}
+    ]
+    assert snapshot["meta"]["book_daily_records"] == 1

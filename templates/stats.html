@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+{% block content %}
+<header class="page-head">
+  <p class="eyebrow">READING IN NUMBERS</p>
+  <h1>阅读统计</h1>
+  <p>阅读时长、年度变化、主题分布，以及最近一年的阅读热力图。</p>
+</header>
+
+<section class="stat-strip">
+  {{ macros.stat_card(stats.reading_seconds|duration_compact, '累计阅读', stats.unique_reading_days|string ~ ' 天有记录') }}
+  {{ macros.stat_card(stats.finished, '本读完', stats.books|string + ' 本在架') }}
+  {{ macros.stat_card(stats.highlights, '条划线', stats.notes|string + ' 条想法') }}
+  {{ macros.stat_card(stats.words|compact, '字读过', '按书籍字数累计') }}
+</section>
+
+<section class="section split-section">
+  <div>
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">BY YEAR</p>
+        <h2>年度阅读时长</h2>
+      </div>
+    </div>
+    {{ macros.year_chart(year_bars) }}
+  </div>
+  <div>
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">BY SUBJECT</p>
+        <h2>主题分布</h2>
+      </div>
+    </div>
+    {{ macros.category_chart(category_bars) }}
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">LAST 12 MONTHS</p>
+      <h2>阅读热力图</h2>
+    </div>
+    <span class="count-note">颜色越深，阅读时间越长</span>
+  </div>
+  <div class="heatmap-wrap">
+    {{ macros.heatmap(heatmap_weeks) }}
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">MOST READ</p>
+      <h2>读得最久的书</h2>
+    </div>
+  </div>
+  <div class="book-row-list">
+    {% for item in top_books %}
+    <a class="book-row" href="{{ url('/book/' ~ item.slug ~ '/') }}">
+      <span class="book-row-main">
+        <strong>{{ item.title }}</strong>
+        <small>{{ item.authors|join(' / ') }}</small>
+      </span>
+      <span class="book-row-side">{{ item.reading_time_label }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,99 @@
+{% macro book_cover(book, class_name='') %}
+<div class="cover {{ class_name }}">
+  {% if book.cover_url %}
+  <img src="{{ url(book.cover_url) }}" alt="《{{ book.title }}》封面" loading="lazy" decoding="async">
+  {% else %}
+  <div class="cover-fallback">{{ book.title[:1] }}</div>
+  {% endif %}
+</div>
+{% endmacro %}
+
+{% macro book_card(book) %}
+<a class="book-card" href="{{ url('/book/' ~ book.slug ~ '/') }}"
+   data-title="{{ book.title|lower }}"
+   data-author="{{ (book.authors|join(' '))|lower }}"
+   data-status="{{ book.status }}"
+   data-category="{{ (book.categories|join(' '))|lower }}">
+  {{ book_cover(book) }}
+  <div class="book-card-body">
+    <div class="book-card-top">
+      <span class="status status-{{ book.status }}">{{ book.status_label }}</span>
+      {% if book.my_rating %}
+      <span class="stars" title="{{ book.my_rating }} 星">{{ book.my_rating|stars }}</span>
+      {% endif %}
+    </div>
+    <h3>{{ book.title }}</h3>
+    <p class="book-author">{{ book.authors|join(' / ') }}</p>
+    <p class="book-micro">
+      {{ book.reading_time_label }}
+      {% if book.highlight_count %} · {{ book.highlight_count }} 条划线{% endif %}
+    </p>
+  </div>
+</a>
+{% endmacro %}
+
+{% macro book_row(book) %}
+<a class="book-row" href="{{ url('/book/' ~ book.slug ~ '/') }}">
+  {{ book_cover(book, 'cover-small') }}
+  <span class="book-row-main">
+    <strong>{{ book.title }}</strong>
+    <small>{{ book.authors|join(' / ') }} · {{ book.reading_time_label }}</small>
+  </span>
+  <span class="book-row-side">{{ book.status_label }}</span>
+</a>
+{% endmacro %}
+
+{% macro stat_card(value, label, note='') %}
+<div class="stat-card">
+  <strong>{{ value }}</strong>
+  <span>{{ label }}</span>
+  {% if note %}<small>{{ note }}</small>{% endif %}
+</div>
+{% endmacro %}
+
+{% macro year_chart(years) %}
+<div class="bar-chart" role="img" aria-label="年度阅读时长">
+  {% for item in years %}
+  <div class="bar-row">
+    <span class="bar-label">{{ item.year }}</span>
+    <span class="bar-track"><span class="bar-fill" style="width: {{ item.width }}%"></span></span>
+    <span class="bar-value">{{ item.seconds|duration }}</span>
+  </div>
+  {% endfor %}
+</div>
+{% endmacro %}
+
+{% macro category_chart(categories) %}
+<div class="bar-chart" role="img" aria-label="主题阅读时长">
+  {% for item in categories %}
+  <div class="bar-row">
+    <span class="bar-label">{{ item.name }}</span>
+    <span class="bar-track"><span class="bar-fill alt" style="width: {{ item.width }}%"></span></span>
+    <span class="bar-value">{{ item.seconds|duration }}</span>
+  </div>
+  {% endfor %}
+</div>
+{% endmacro %}
+
+{% macro heatmap(weeks) %}
+<div class="heatmap" role="img" aria-label="最近一年的阅读热力图">
+  {% for week in weeks %}
+  <div class="heatmap-week">
+    {% for cell in week %}
+    <span class="heat-cell level-{{ cell.level }}"
+          title="{{ cell.date }}{% if cell.seconds %} · {{ cell.seconds|duration }}{% endif %}"></span>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</div>
+{% endmacro %}
+
+{% macro topic_pills(categories, limit=14) %}
+<div class="topic-pills">
+  {% for category in categories[:limit] %}
+  <a href="{{ url('/topic/' ~ category.slug ~ '/') }}">
+    {{ category.name }}<small>{{ category.books }}</small>
+  </a>
+  {% endfor %}
+</div>
+{% endmacro %}

@@ -1,0 +1,10 @@
+.venv/
+.wrangler/
+.cache/
+.pytest_cache/
+__pycache__/
+*.pyc
+site/
+preview-home.html
+*.tmp
+.DS_Store

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+{% block content %}
+<header class="page-head">
+  <p class="eyebrow">THE SHELF</p>
+  <h1>全部书籍</h1>
+  <p>{{ book_count }} 本书，按最近阅读时间排列。可以用状态、主题和关键词筛选。</p>
+</header>
+
+<div class="filter-bar" data-filter-bar>
+  <label class="filter-search">
+    <span class="sr-only">搜索书名或作者</span>
+    <input id="book-search" type="search" placeholder="搜索书名、作者、主题…" autocomplete="off">
+  </label>
+  <div class="filter-chips" role="group" aria-label="阅读状态">
+    <button class="chip active" type="button" data-status="all">全部</button>
+    <button class="chip" type="button" data-status="reading">在读</button>
+    <button class="chip" type="button" data-status="finished">读完</button>
+    <button class="chip" type="button" data-status="want">想读</button>
+  </div>
+  <label class="filter-select">
+    <span class="sr-only">按主题筛选</span>
+    <select id="category-filter">
+      <option value="">全部主题</option>
+      {% for category in top_categories %}
+      <option value="{{ category.name|lower }}">{{ category.name }}（{{ category.books }}）</option>
+      {% endfor %}
+    </select>
+  </label>
+</div>
+
+<p class="filter-result" id="filter-result" aria-live="polite"></p>
+<div class="book-grid" id="book-grid">
+  {% for book in books %}
+  {{ macros.book_card(book) }}
+  {% endfor %}
+</div>
+<p class="empty-state" id="filter-empty" hidden>没有匹配的书。换一个关键词或筛选条件试试。</p>
+{% endblock %}

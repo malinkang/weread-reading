@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="page-head about-head">
+  <p class="eyebrow">ABOUT THIS SHELF</p>
+  <h1>关于这个书架</h1>
+  <p>这是一个公开的个人阅读档案，不是排行榜，也不是书评网站。</p>
+</header>
+
+<div class="prose">
+  <section>
+    <h2>数据从哪里来</h2>
+    <p>书目、作者、阅读状态、阅读时长和划线来自我的微信读书账号，经 <code>weread2notion</code> 同步到 Notion。这个站点只读取 Notion 中的公开字段，不接触微信读书密码，也不在浏览器里保存 Notion token。</p>
+  </section>
+  <section>
+    <h2>为什么用 GitHub Action</h2>
+    <p>GitHub Action 每天读取一次 Notion，把结果写成一份公开 JSON 快照并提交到仓库。之后静态站点直接基于这份快照生成 HTML。页面不依赖 Notion API，所以访问很快，也不会因为 Notion 限流而打不开。</p>
+    <pre><code>Notion → GitHub Action → public-snapshot.json → 预渲染 HTML → GitHub Pages</code></pre>
+  </section>
+  <section>
+    <h2>公开了什么</h2>
+    <p>默认公开书名、作者、封面、阅读状态、阅读时长、评分和划线摘录。私人想法、完整书评和手写笔记默认不公开；只有明确配置后才会进入公开快照。</p>
+  </section>
+  <section>
+    <h2>排名怎么算</h2>
+    <p>这里没有“多少人推荐”。首页按最近阅读时间排列，统计页按累计阅读时长排列。一本书被读得久，通常比被点开一次更有意义。</p>
+  </section>
+  <section>
+    <h2>更新频率</h2>
+    <p>GitHub Action 每天运行一次；如果 Notion 数据没有变化，快照不会产生新提交。最近更新时间：{{ generated_at[:10] or '未知' }}。</p>
+  </section>
+  <section>
+    <h2>版权与隐私</h2>
+    <p>书籍封面和元数据来自微信读书与 Open Library 等来源；划线摘录仅用于个人阅读记录，版权归原作者与出版方所有。如果你发现不应公开的内容，可以通过站点仓库联系我删除。</p>
+  </section>
+</div>
+{% endblock %}

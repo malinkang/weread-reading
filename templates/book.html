@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+{% block content %}
+<nav class="breadcrumb" aria-label="面包屑">
+  <a href="{{ url('/books/') }}">书架</a>
+  <span>/</span>
+  {% if book.categories %}
+  <a href="{{ url('/topic/' ~ (book.categories[0]|slug) ~ '/') }}">{{ book.categories[0] }}</a>
+  <span>/</span>
+  {% endif %}
+  <span>{{ book.title }}</span>
+</nav>
+
+<article class="book-detail">
+  <div class="book-detail-hero">
+    <div class="book-detail-cover">
+      {{ macros.book_cover(book, 'cover-large') }}
+    </div>
+    <div class="book-detail-main">
+      <div class="book-detail-kicker">
+        <span class="status status-{{ book.status }}">{{ book.status_label }}</span>
+        {% for category in book.categories %}
+        <a class="topic-tag" href="{{ url('/topic/' ~ (category|slug) ~ '/') }}">{{ category }}</a>
+        {% endfor %}
+      </div>
+      <h1>{{ book.title }}</h1>
+      <p class="book-detail-author">{{ book.authors|join(' / ') }}</p>
+      <div class="book-detail-rating">
+        {% if book.my_rating %}
+        <span class="stars large">{{ book.my_rating|stars }}</span>
+        <span>我的评分</span>
+        {% endif %}
+        {% if book.rating %}
+        <span class="rating-separator">·</span>
+        <span><strong>{{ '%.1f'|format(book.rating) }}</strong> / 10</span>
+        {% endif %}
+        {% if book.reading_days %}
+        <span class="rating-separator">·</span>
+        <span>{{ book.reading_days }} 个阅读日</span>
+        {% endif %}
+      </div>
+      {% if book.intro %}
+      <p class="book-lede">{{ book.intro }}</p>
+      {% endif %}
+      <dl class="book-facts">
+        <div><dt>阅读时长</dt><dd>{{ book.reading_time_label }}</dd></div>
+        <div><dt>阅读进度</dt><dd>{{ (book.progress * 100)|round|int }}%</dd></div>
+        <div><dt>划线</dt><dd>{{ book.highlight_count }} 条</dd></div>
+        <div><dt>章节</dt><dd>{{ book.chapter_count }} 个</dd></div>
+        {% if book.publisher %}<div><dt>出版社</dt><dd>{{ book.publisher }}</dd></div>{% endif %}
+        {% if book.published %}<div><dt>出版</dt><dd>{{ book.published[:10] }}</dd></div>{% endif %}
+        {% if book.words %}<div><dt>字数</dt><dd>{{ book.words }} 字</dd></div>{% endif %}
+        {% if book.isbn %}<div><dt>ISBN</dt><dd>{{ book.isbn }}</dd></div>{% endif %}
+      </dl>
+      <div class="book-actions">
+        {% if book.link %}
+        <a class="button primary" href="{{ book.link }}" target="_blank" rel="noopener noreferrer">在微信读书打开 ↗</a>
+        {% endif %}
+        <a class="button ghost" href="{{ url('/books/') }}">回到书架</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="reading-meter" aria-label="阅读进度">
+    <div class="reading-meter-head">
+      <span>阅读进度</span>
+      <strong>{{ (book.progress * 100)|round|int }}%</strong>
+    </div>
+    <div class="meter-track"><span style="width: {{ (book.progress * 100)|round|int }}%"></span></div>
+    <div class="reading-meter-dates">
+      <span>开始 {{ book.started_at or '未记录' }}</span>
+      <span>{% if book.finished_at %}读完 {{ book.finished_at }}{% else %}最近阅读 {{ book.last_read_at or '未记录' }}{% endif %}</span>
+    </div>
+  </section>
+
+  <section class="highlights-section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">MARKED IN THE MARGINS</p>
+        <h2>我的划线</h2>
+      </div>
+      {% if book.highlight_count %}
+      <span class="count-note">{{ book.highlight_count }} 条公开摘录</span>
+      {% endif %}
+    </div>
+    {% if book.highlight_groups %}
+      {% for group in book.highlight_groups %}
+      <section class="highlight-group">
+        <h3>{{ group.chapter }}</h3>
+        {% for item in group.entries %}
+        <figure class="highlight">
+          <blockquote>{{ item.text }}</blockquote>
+          {% if item.note %}<figcaption>{{ item.note }}</figcaption>{% endif %}
+          {% if item.created_at %}<span class="highlight-date">{{ item.created_at }}</span>{% endif %}
+        </figure>
+        {% endfor %}
+      </section>
+      {% endfor %}
+      {% if book.highlight_count > book.highlights|length %}
+      <p class="truncation-note">公开页面只展示部分划线，完整记录保留在私人 Notion 中。</p>
+      {% endif %}
+    {% else %}
+    <div class="empty-state">
+      <p>这本书还没有公开的划线。</p>
+      <p class="muted">有些书读完了，但没有留下标记；有些标记只保留在私人版本里。</p>
+    </div>
+    {% endif %}
+  </section>
+
+  {% if related %}
+  <section class="section related-section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">KEEP BROWSING</p>
+        <h2>相关的书</h2>
+      </div>
+    </div>
+    <div class="book-grid book-grid-four">
+      {% for item in related %}
+      {{ macros.book_card(item) }}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+</article>
+<script type="application/ld+json">{{ json_ld|safe }}</script>
+{% endblock %}

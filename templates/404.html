@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="not-found">
+  <p class="eyebrow">404</p>
+  <h1>这一页不在书架上。</h1>
+  <p>可能链接过期了，也可能这本书已经被移出公开书架。</p>
+  <a class="button primary" href="{{ url('/books/') }}">回到书架</a>
+</section>
+{% endblock %}

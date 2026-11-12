@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+{% block content %}
+<header class="page-head">
+  <p class="eyebrow">AUTHOR</p>
+  <h1>{{ author.name }}</h1>
+  <p>{{ author.books }} 本书 · {{ author.seconds|duration }}阅读时长</p>
+</header>
+<div class="book-grid">
+  {% for book in author_books %}
+  {{ macros.book_card(book) }}
+  {% endfor %}
+</div>
+{% endblock %}

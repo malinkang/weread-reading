@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_title }}</title>
+  <meta name="description" content="{{ page_description }}">
+  <link rel="canonical" href="{{ canonical }}">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:type" content="{{ og_type }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ page_description }}">
+  <meta property="og:url" content="{{ canonical }}">
+  {% if og_image %}
+  <meta property="og:image" content="{{ og_image }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ og_image }}">
+  {% else %}
+  <meta name="twitter:card" content="summary">
+  {% endif %}
+  <link rel="icon" href="{{ url(assets.favicon) }}" type="image/svg+xml">
+  <link rel="manifest" href="{{ url('/manifest.webmanifest') }}">
+  <link rel="stylesheet" href="{{ url(assets.style) }}">
+  <script>
+    try {
+      var saved = localStorage.getItem('weread.theme');
+      if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+    } catch (e) {}
+  </script>
+</head>
+<body data-page="{{ page }}" data-base="{{ base_path or '' }}">
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="topbar">
+    <button class="icon-button menu-button" id="menu-button" type="button"
+            aria-label="打开导航" aria-controls="sidebar" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="21" height="21" aria-hidden="true">
+        <path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <a class="brand" href="{{ url('/') }}" aria-label="{{ site.title }} 首页">
+      <span class="brand-mark">读</span>
+      <span class="brand-name">{{ site.title }}</span>
+    </a>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="{{ url('/books/') }}" class="{{ 'active' if page == 'books' else '' }}">书架</a>
+      <a href="{{ url('/stats/') }}" class="{{ 'active' if page == 'stats' else '' }}">统计</a>
+      <a href="{{ url('/about/') }}" class="{{ 'active' if page == 'about' else '' }}">关于</a>
+    </nav>
+    <form class="top-search" action="{{ url('/search/') }}" method="get" role="search">
+      <input type="search" name="q" placeholder="搜索书名、作者…" aria-label="搜索书名或作者">
+    </form>
+    <button class="icon-button theme-button" id="theme-button" type="button" aria-label="切换深浅色">
+      <svg class="sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <svg class="moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        <path d="M20 15.2A8.5 8.5 0 0 1 8.8 4 8.5 8.5 0 1 0 20 15.2Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </header>
+
+  <div class="shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <p class="side-label">浏览</p>
+        <nav class="side-nav" aria-label="书架导航">
+          <a href="{{ url('/books/') }}" class="{{ 'active' if page == 'books' else '' }}">全部书籍 <span>{{ stats.books or 0 }}</span></a>
+          <a href="{{ url('/books/?status=reading') }}">最近在读 <span>{{ stats.reading or 0 }}</span></a>
+          <a href="{{ url('/books/?status=finished') }}">读完 <span>{{ stats.finished or 0 }}</span></a>
+          <a href="{{ url('/stats/') }}">阅读统计</a>
+        </nav>
+        <p class="side-label side-label-spaced">主题</p>
+        <nav class="side-nav side-topics" aria-label="主题导航">
+          {% for category in categories[:16] %}
+          <a href="{{ url('/topic/' ~ category.slug ~ '/') }}">{{ category.name }} <span>{{ category.books }}</span></a>
+          {% endfor %}
+        </nav>
+        {% if authors %}
+        <p class="side-label side-label-spaced">作者</p>
+        <nav class="side-nav side-topics" aria-label="作者导航">
+          {% for author in authors[:8] %}
+          <a href="{{ url('/author/' ~ author.slug ~ '/') }}">{{ author.name }} <span>{{ author.books }}</span></a>
+          {% endfor %}
+        </nav>
+        {% endif %}
+        <p class="sidebar-note">数据来自微信读书与 Notion<br>更新于 {{ generated_at[:10] or '未知' }}</p>
+      </div>
+    </aside>
+
+    <main id="main" class="main">
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p><strong>{{ site.title }}</strong> · 一个公开的个人阅读书架</p>
+    <p>书目与划线来自微信读书 · 由 Notion 与 GitHub Actions 定期更新 · <a href="{{ url('/about/') }}">数据说明</a></p>
+  </footer>
+
+  <div class="nav-scrim" id="nav-scrim" hidden></div>
+  <script src="{{ url(assets.app) }}" defer></script>
+</body>
+</html>

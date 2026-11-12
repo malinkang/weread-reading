@@ -1,0 +1,73 @@
+name: Sync public reading snapshot
+
+on:
+  schedule:
+    # 03:00 Asia/Shanghai
+    - cron: "0 19 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weread-reading-snapshot
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Sync public snapshot from Notion
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          WEREAD_BOOKS_DATABASE_ID: ${{ secrets.WEREAD_BOOKS_DATABASE_ID }}
+          WEREAD_BOOKS_DATA_SOURCE_ID: ${{ secrets.WEREAD_BOOKS_DATA_SOURCE_ID }}
+          WEREAD_AUTHORS_DATABASE_ID: ${{ secrets.WEREAD_AUTHORS_DATABASE_ID }}
+          WEREAD_AUTHORS_DATA_SOURCE_ID: ${{ secrets.WEREAD_AUTHORS_DATA_SOURCE_ID }}
+          WEREAD_CATEGORIES_DATABASE_ID: ${{ secrets.WEREAD_CATEGORIES_DATABASE_ID }}
+          WEREAD_CATEGORIES_DATA_SOURCE_ID: ${{ secrets.WEREAD_CATEGORIES_DATA_SOURCE_ID }}
+          WEREAD_BOOKMARKS_DATABASE_ID: ${{ secrets.WEREAD_BOOKMARKS_DATABASE_ID }}
+          WEREAD_BOOKMARKS_DATA_SOURCE_ID: ${{ secrets.WEREAD_BOOKMARKS_DATA_SOURCE_ID }}
+          WEREAD_REVIEWS_DATABASE_ID: ${{ secrets.WEREAD_REVIEWS_DATABASE_ID }}
+          WEREAD_REVIEWS_DATA_SOURCE_ID: ${{ secrets.WEREAD_REVIEWS_DATA_SOURCE_ID }}
+          WEREAD_CHAPTERS_DATABASE_ID: ${{ secrets.WEREAD_CHAPTERS_DATABASE_ID }}
+          WEREAD_CHAPTERS_DATA_SOURCE_ID: ${{ secrets.WEREAD_CHAPTERS_DATA_SOURCE_ID }}
+          WEREAD_DAILY_DATABASE_ID: ${{ secrets.WEREAD_DAILY_DATABASE_ID }}
+          WEREAD_DAILY_DATA_SOURCE_ID: ${{ secrets.WEREAD_DAILY_DATA_SOURCE_ID }}
+          WEREAD_READING_LOG_DATABASE_ID: ${{ secrets.WEREAD_READING_LOG_DATABASE_ID }}
+          WEREAD_READING_LOG_DATA_SOURCE_ID: ${{ secrets.WEREAD_READING_LOG_DATA_SOURCE_ID }}
+          PUBLIC_INCLUDE_HIGHLIGHTS: ${{ vars.PUBLIC_INCLUDE_HIGHLIGHTS || 'true' }}
+          PUBLIC_INCLUDE_REVIEWS: ${{ vars.PUBLIC_INCLUDE_REVIEWS || 'false' }}
+          PUBLIC_MAX_HIGHLIGHTS_PER_BOOK: ${{ vars.PUBLIC_MAX_HIGHLIGHTS_PER_BOOK || '40' }}
+          PUBLIC_MAX_HIGHLIGHT_CHARS: ${{ vars.PUBLIC_MAX_HIGHLIGHT_CHARS || '500' }}
+          PUBLIC_SITE_TITLE: ${{ vars.PUBLIC_SITE_TITLE || '读书记' }}
+          PUBLIC_SITE_URL: ${{ vars.PUBLIC_SITE_URL }}
+          PUBLIC_SITE_DESCRIPTION: ${{ vars.PUBLIC_SITE_DESCRIPTION }}
+        run: python sync_notion.py --output data/public-snapshot.json --print-summary
+
+      - name: Commit snapshot when it changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/public-snapshot.json
+          if git diff --cached --quiet; then
+            echo "snapshot unchanged"
+          else
+            git commit -m "chore(reading): refresh public snapshot"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi

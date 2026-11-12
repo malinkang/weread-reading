@@ -1,0 +1,4221 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-12T09:30:00+08:00",
+  "site": {
+    "title": "读书记",
+    "description": "我读过的书，和留在页边的话。",
+    "url": "https://reading.example.com"
+  },
+  "meta": {
+    "source": "demo",
+    "books": 14,
+    "highlights": 25,
+    "notes": 25,
+    "daily_records": 228,
+    "include_highlights": true,
+    "include_reviews": true
+  },
+  "books": [
+    {
+      "source_id": "demo-三体",
+      "slug": "san-ti-0b4ee5",
+      "title": "三体",
+      "authors": [
+        "刘慈欣"
+      ],
+      "categories": [
+        "科幻",
+        "文学"
+      ],
+      "cover": null,
+      "isbn": "9787536692930",
+      "publisher": "重庆出版社",
+      "published": "2008",
+      "rating": 9.3,
+      "my_rating": 5,
+      "status": "finished",
+      "status_label": "读完",
+      "progress": 1.0,
+      "reading_seconds": 18320,
+      "reading_time_label": "5 小时 5 分钟",
+      "reading_days": 21,
+      "words": 230000,
+      "price": null,
+      "intro": "在宏大的宇宙尺度下，人类文明第一次意识到自己并不孤独，也并不安全。",
+      "link": "",
+      "started_at": "2026-01-03",
+      "finished_at": "2026-02-08",
+      "last_read_at": "2026-02-08",
+      "highlight_count": 3,
+      "note_count": 3,
+      "chapter_count": 3,
+      "highlights": [
+        {
+          "kind": "highlight",
+          "text": "宇宙很大，但真正让人害怕的，是看见自己在其中的位置。",
+          "note": "",
+          "chapter": "黑暗森林",
+          "created_at": "2026-01-18"
+        },
+        {
+          "kind": "note",
+          "text": "一个人的秘密，只有在不需要向任何人解释时，才真正属于自己。",
+          "note": "读到这一段时停了很久。",
+          "chapter": "面壁计划",
+          "created_at": "2026-01-26"
+        },
+        {
+          "kind": "highlight",
+          "text": "文明的意义，也许不在于抵达哪里，而在于曾经认真看过星空。",
+          "note": "",
+          "chapter": "尾声",
+          "created_at": "2026-02-07"
+        }
+      ]
+    },
+    {
+      "source_id": "demo-人类简史",
+      "slug": "ren-lei-jian-shi-a46983",
+      "title": "人类简史",
+      "authors": [
+        "尤瓦尔·赫拉利"
+      ],
+      "categories": [
+        "历史",
+        "社科"
+      ],
+      "cover": null,
+      "isbn": "9787508647357",
+      "publisher": "中信出版社",
+      "published": "2014",
+      "rating": 9.1,
+      "my_rating": 4,
+      "status": "finished",
+      "status_label": "读完",
+      "progress": 1.0,
+      "reading_seconds": 26400,
+      "reading_time_label": "7 小时 20 分钟",
+      "reading_days": 30,
+      "words": 330000,
+      "price": null,
+      "intro": "从认知革命到科学革命，重新讲述智人如何成为地球的主导物种。",
+      "link": "",
+      "started_at": "2025-08-12",
+      "finished_at": "2025-09-24",
+      "last_read_at": "2025-09-24",
+      "highlight_count": 2,
+      "note_count": 2,
+      "chapter_count": 2,
+      "highlights": [
+        {
+          "kind": "highlight",
+          "text": "虚构故事的力量，让陌生人可以围绕同一个想象协作。",
+          "note": "",
+          "chapter": "认知革命",
+          "created_at": "2025-08-20"
+        },
+        {
+          "kind": "note",
+          "text": "每一次效率提升，都可能悄悄把生活变成另一种忙碌。",
+          "note": "这句话放在今天也很好用。",
+          "chapter": "农业革命",
+          "created_at": "2025-09-02"
+        }
+      ]
+    },
+    {
+      "source_id": "demo-设计数据密集型应用",
+      "slug": "she-ji-shu-ju-mi-ji-xing-ying-yong-5ad63e",
+      "title": "设计数据密集型应用",
+      "authors": [
+        "Martin Kleppmann"
+      ],
+      "categories": [
+        "技术",
+        "工程"
+      ],
+      "cover": null,
+      "isbn": "9787519821968",
+      "publisher": "中国电力出版社",
+      "published": "2018",
+      "rating": 9.4,
+      "my_rating": 5,
+      "status": "reading",
+      "status_label": "在读",
+      "progress": 0.62,
+      "reading_seconds": 34200,
+      "reading_time_label": "9 小时 30 分钟",
+      "reading_days": 28,
+      "words": 420000,
+      "price": null,
+      "intro": "从数据库内部到分布式系统，解释可靠、可扩展、可维护的系统如何被设计出来。",
+      "link": "",
+      "started_at": "2026-06-02",
+      "finished_at": null,
+      "last_read_at": "2026-11-10",
+      "highlight_count": 3,
+      "note_count": 3,
+      "chapter_count": 3,
+      "highlights": [
+        {
+          "kind": "highlight",
+          "text": "可靠性不是没有故障，而是系统在故障发生时仍能维持可接受的行为。",
+          "note": "",
+          "chapter": "可靠性",
+          "created_at": "2026-06-15"
+        },
+        {
+          "kind": "note",
+          "text": "选择数据模型，本质上是在选择未来几年里哪些问题会变容易。",
+          "note": "读到这里去改了一个项目里的表结构。",
+          "chapter": "数据模型",
+          "created_at": "2026-07-02"
+        },
+        {
+          "kind": "highlight",
+          "text": "复制带来可用性，也带来新的不一致；没有免费的副本。",
+          "note": "",
+          "chapter": "复制",
+          "created_at": "2026-08-19"
+        }
+      ]
+    },
+    {
+      "source_id": "demo-置身事内",
+      "slug": "zhi-shen-shi-nei-7dd66a",
+      "title": "置身事内",
+      "authors": [
+        "兰小欢"
+      ],
+      "categories": [
+        "经济",
+        "社科"
+      ],
+      "cover": null,
+      "isbn": "9787208164983",
+      "publisher": "上海人民出版社",
+      "published": "2020",
+      "rating": 9.2,
+      "my_rating": 5,
+      "status": "finished",
+      "status_label": "读完",
+      "progress": 1.0,
+      "reading_seconds": 15600,
+      "reading_time_label": "4 小时 20 分钟",
+      "reading_days": 18,
+      "words": 240000,
+      "price": null,
+      "intro": "从地方政府投融资讲起，理解中国经济运行中那些看似矛盾却彼此咬合的部分。",
+      "link": "",
+      "started_at": "2025-11-18",
+      "finished_at": "2025-12-16",
+      "last_read_at": "2025-12-16",
+      "highlight_count": 2,
+      "note_count": 2,
+      "chapter_count": 2,
+      "highlights": [
+        {
+          "kind": "highlight",
+          "text": "理解地方政府的行为，是理解中国经济很多现象的起点。",
+          "note": "",
+          "chapter": "地方政府的权力与事务",
+          "created_at": "2025-11-25"
+        },
+        {
+          "kind": "note",
+          "text": "很多结果并不是谁提前设计好的，而是激励一步一步推出来的。",
+          "note": "制度不是背景，是角色。",
+          "chapter": "土地财政",
+          "created_at": "2025-12-04"
+        }
+      ]
+    },
+    {
+      "source_id": "demo-活着",
+      "slug": "huo-zhe-8c64a6",
+      "title": "活着",
+      "authors": [
+        "余华"
+      ],
+      "categories": [
+        "文学",
+        "小说"
+      ],
+      "cover": null,
+      "isbn": "9787506365437",
+      "publisher": "作家出版社",
+      "published": "2012",
+      "rating": 9.4,
+      "my_rating": 5,
+      "status": "finished",
+      "status_label": "读完",
+      "progress": 1.0,
+      "reading_seconds": 7200,
+      "reading_time_label": "2 小时",
+      "reading_days": 9,
+      "words": 120000,
+      "price": null,
+      "intro": "一个人和他的命运之间的友情，也是一个人如何承受失去的故事。",
+      "link": "",
+      "started_at": "2025-06-08",
+      "finished_at": "2025-06-15",
+      "last_read_at": "2025-06-15",
+      "highlight_count": 2,
+      "note_count": 2,
+      "chapter_count": 2,
+      "highlights": [
+        {
+          "kind": "highlight",
+          "text": "日子再难，也要把今天过完。",
+          "note": "",
+          "chapter": "少年去游荡",
+          "created_at": "2025-06-10"
+        },
+        {
+          "kind": "note",
+          "text": "人到最后记住的，往往不是大事，而是几个人坐在一起吃饭的晚上。",
+          "note": "读到最后一段时鼻子有点酸。",
+          "chapter": "黄昏",
+          "created_at": "2025-06-14"
+        }
+      ]
+    },
+    {
+      "source_id": "demo-百年孤独",
+      "slug": "bai-nian-gu-du-1fdddb",
+      "title": "百年孤独",
+      "authors": [
+        "加西亚·马尔克斯"
+      ],
+      "categories": [
+        "文学",
+        "小说"
+      ],
+      "cover": null,
+      "isbn": "9787544253994",
+      "publisher": "南海出版公司",
+      "published": "2011",
+      "rating": 9.3,
+      "my_rating": 4,
+      "status": "reading",
+      "status_label": "在读",
+      "progress": 0.62,
+      "reading_seconds": 12600,
+      "reading_time_label": "3 小时 30 分钟",
+      "reading_days": 15,
+      "words": 260000,
+      "price": null,
+      "intro": "布恩迪亚家族七代人的命运，像一场被提前写好的雨。",
+      "link": "",
+      "started_at": "2026-09-10",
+      "finished_at": null,
+      "last_read_at": "2026-11-08",
+      "highlight_count": 2,
+      "note_count": 2,
+      "chapter_count": 2,
+      "highlights": [
+        {
+          "kind": "highlight",
+          "text": "世界还太新，很多事物还没有名字，只能用手去指。",
+          "note": "",
+          "chapter": "第一章",
+          "created_at": "2026-09-18"
+        },
+        {
+          "kind": "highlight",
+          "text": "记忆会迷路，但房子会替人记住一些事情。",
+          "note": "",
+          "chapter": "马孔多",
+          "created_at": "2026-10-21"
+        }
+      ]
+    },
+    {
+      "source_id": "demo-思考，快与慢",
+      "slug": "si-kao-kuai-yu-man-5f38e2",
+      "title": "思考，快与慢",
+      "authors": [
+        "丹尼尔·卡尼曼"
+      ],
+      "categories": [
+        "心理学",
+        "认知"
+      ],
+      "cover": null,
+      "isbn": "9787508633558",
+      "publisher": "中信出版社",
+      "published": "2012",
+      "rating": 8.6,
+      "my_rating": 4,
+      "status": "reading",
+      "status_label": "在读",
+      "progress": 0.62,
+      "reading_seconds": 9800,
+      "reading_time_label": "2 小时 43 分钟",
+      "reading_days": 12,
+      "words": 360000,
+      "price": null,
+      "intro": "两个系统如何共同制造判断、偏见和错觉，以及我们为什么很难察觉。",
+      "link": "",
+      "started_at": "2026-03-02",
+      "finished_at": null,
+      "last_read_at": "2026-10-30",
+      "highlight_count": 2,
+      "note_count": 2,
+      "chapter_count": 2,
+      "highlights": [
+        {
+          "kind": "highlight",
+          "text": "我们以为自己是在判断事实，其实常常是在快速辨认一个熟悉的故事。",
+          "note": "",
+          "chapter": "系统 1 与系统 2",
+          "created_at": "2026-03-14"
+        },
+        {
+          "kind": "note",
+          "text": "第一个数字不一定正确，但它会悄悄决定后面所有数字的位置。",
+          "note": "做预算时尤其明显。",
+          "chapter": "锚定效应",
+          "created_at": "2026-04-01"
+        }
+      ]
+    },
+    {
+      "source_id": "demo-深度工作",
+      "slug": "shen-du-gong-zuo-0485bb",
+      "title": "深度工作",
+      "authors": [
+        "卡尔·纽波特"
+      ],
+      "categories": [
+        "效率",
+        "工作"
+      ],
+      "cover": null,
+      "isbn": "9787210093219",
+      "publisher": "江西人民出版社",
+      "published": "2017",
+      "rating": 8.2,
+      "my_rating": 4,
+      "status": "finished",
+      "status_label": "读完",
+      "progress": 1.0,
+      "reading_seconds": 8400,
+      "reading_time_label": "2 小时 20 分钟",
+      "reading_days": 11,
+      "words": 180000,
+      "price": null,
+      "intro": "在注意力稀缺的时代，把认知能力推到极限，并把它变成可重复的日常。",
+      "link": "",
+      "started_at": "2024-12-01",
+      "finished_at": "2024-12-12",
+      "last_read_at": "2024-12-12",
+      "highlight_count": 2,
+      "note_count": 2,
+      "chapter_count": 2,
+      "highlights": [
+        {
+          "kind": "highlight",
+          "text": "高质量工作产出 = 时间 × 专注度。",
+          "note": "",
+          "chapter": "深度工作是有价值的",
+          "created_at": "2024-12-04"
+        },
+        {
+          "kind": "highlight",
+          "text": "如果每一段空白都要被填满，大脑就失去了自己安静下来的能力。",
+          "note": "",
+          "chapter": "拥抱无聊",
+          "created_at": "2024-12-08"
+        }
+      ]
+    },
+    {
+      "source_id": "demo-万历十五年",
+      "slug": "wan-li-shi-wu-nian-0dbc8a",
+      "title": "万历十五年",
+      "authors": [
+        "黄仁宇"
+      ],
+      "categories": [
+        "历史",
+        "中国史"
+      ],
+      "cover": null,
+      "isbn": "9787101052039",
+      "publisher": "中华书局",
+      "published": "2007",
+      "rating": 8.9,
+      "my_rating": 4,
+      "status": "finished",
+      "status_label": "读完",
+      "progress": 1.0,
+      "reading_seconds": 11200,
+      "reading_time_label": "3 小时 6 分钟",
+      "reading_days": 14,
+      "words": 210000,
+      "price": null,
+      "intro": "从看似平淡的一年切入，观察一个王朝如何在制度惯性里慢慢失去弹性。",
+      "link": "",
+      "started_at": "2024-05-06",
+      "finished_at": "2024-05-22",
+      "last_read_at": "2024-05-22",
+      "highlight_count": 2,
+      "note_count": 2,
+      "chapter_count": 2,
+      "highlights": [
+        {
+          "kind": "highlight",
+          "text": "一个王朝的转折，常常不是从大事开始，而是从无数小事里的惯性开始。",
+          "note": "",
+          "chapter": "万历皇帝",
+          "created_at": "2024-05-12"
+        },
+        {
+          "kind": "highlight",
+          "text": "道德可以要求一个人，却很难单独支撑一套制度。",
+          "note": "",
+          "chapter": "海瑞",
+          "created_at": "2024-05-18"
+        }
+      ]
+    },
+    {
+      "source_id": "demo-小王子",
+      "slug": "xiao-wang-zi-e80c0b",
+      "title": "小王子",
+      "authors": [
+        "安托万·德·圣埃克苏佩里"
+      ],
+      "categories": [
+        "文学",
+        "童话"
+      ],
+      "cover": null,
+      "isbn": "9787020042494",
+      "publisher": "人民文学出版社",
+      "published": "2003",
+      "rating": 9.1,
+      "my_rating": 5,
+      "status": "finished",
+      "status_label": "读完",
+      "progress": 1.0,
+      "reading_seconds": 3600,
+      "reading_time_label": "1 小时",
+      "reading_days": 5,
+      "words": 30000,
+      "price": null,
+      "intro": "一个来自小行星的旅行者，用最简单的问题提醒大人什么才重要。",
+      "link": "",
+      "started_at": "2026-04-01",
+      "finished_at": "2026-04-04",
+      "last_read_at": "2026-04-04",
+      "highlight_count": 1,
+      "note_count": 1,
+      "chapter_count": 1,
+      "highlights": [
+        {
+          "kind": "note",
+          "text": "真正重要的东西，用眼睛是看不见的。",
+          "note": "重读时还是被这句话击中。",
+          "chapter": "Chapter 21",
+          "created_at": "2026-04-03"
+        }
+      ]
+    },
+    {
+      "source_id": "demo-代码整洁之道",
+      "slug": "dai-ma-zheng-jie-zhi-dao-a30359",
+      "title": "代码整洁之道",
+      "authors": [
+        "Robert C. Martin"
+      ],
+      "categories": [
+        "技术",
+        "工程"
+      ],
+      "cover": null,
+      "isbn": "9787115216878",
+      "publisher": "人民邮电出版社",
+      "published": "2010",
+      "rating": 8.7,
+      "my_rating": 0,
+      "status": "want",
+      "status_label": "想读",
+      "progress": 0.0,
+      "reading_seconds": 0,
+      "reading_time_label": "未记录",
+      "reading_days": 0,
+      "words": 250000,
+      "price": null,
+      "intro": "关于命名、函数、测试和重构的经典实践，适合在写代码的间隙反复翻。",
+      "link": "",
+      "started_at": null,
+      "finished_at": null,
+      "last_read_at": null,
+      "highlight_count": 0,
+      "note_count": 0,
+      "chapter_count": 0,
+      "highlights": []
+    },
+    {
+      "source_id": "demo-程序员修炼之道",
+      "slug": "cheng-xu-yuan-xiu-lian-zhi-dao-6e55d3",
+      "title": "程序员修炼之道",
+      "authors": [
+        "Andrew Hunt",
+        "David Thomas"
+      ],
+      "categories": [
+        "技术",
+        "工程"
+      ],
+      "cover": null,
+      "isbn": "9787121155366",
+      "publisher": "电子工业出版社",
+      "published": "2011",
+      "rating": 8.8,
+      "my_rating": 4,
+      "status": "reading",
+      "status_label": "在读",
+      "progress": 0.62,
+      "reading_seconds": 5600,
+      "reading_time_label": "1 小时 33 分钟",
+      "reading_days": 7,
+      "words": 220000,
+      "price": null,
+      "intro": "从职业习惯到架构判断，一本适合隔几年重读一次的程序员手册。",
+      "link": "",
+      "started_at": "2026-10-12",
+      "finished_at": null,
+      "last_read_at": "2026-11-06",
+      "highlight_count": 2,
+      "note_count": 2,
+      "chapter_count": 2,
+      "highlights": [
+        {
+          "kind": "highlight",
+          "text": "不要重复自己，也不要重复别人的错误。",
+          "note": "",
+          "chapter": "注重实效的哲学",
+          "created_at": "2026-10-18"
+        },
+        {
+          "kind": "highlight",
+          "text": "改变常常不是一次性说服，而是先做出一个可以看见的样板。",
+          "note": "",
+          "chapter": "石头汤与煮青蛙",
+          "created_at": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "source_id": "demo-也许你该找个人聊聊",
+      "slug": "ye-xu-ni-gai-zhao-ge-ren-liao-liao-dfa581",
+      "title": "也许你该找个人聊聊",
+      "authors": [
+        "洛莉·戈特利布"
+      ],
+      "categories": [
+        "心理学",
+        "生活"
+      ],
+      "cover": null,
+      "isbn": "9787553522834",
+      "publisher": "上海文化出版社",
+      "published": "2021",
+      "rating": 8.9,
+      "my_rating": 4,
+      "status": "finished",
+      "status_label": "读完",
+      "progress": 1.0,
+      "reading_seconds": 14400,
+      "reading_time_label": "4 小时",
+      "reading_days": 16,
+      "words": 280000,
+      "price": null,
+      "intro": "一个心理治疗师成为来访者之后，关于改变、羞耻和重新开始的诚实记录。",
+      "link": "",
+      "started_at": "2025-03-08",
+      "finished_at": "2025-03-29",
+      "last_read_at": "2025-03-29",
+      "highlight_count": 2,
+      "note_count": 2,
+      "chapter_count": 2,
+      "highlights": [
+        {
+          "kind": "highlight",
+          "text": "改变不是从答案开始，而是从愿意看见自己开始。",
+          "note": "",
+          "chapter": "一次会谈",
+          "created_at": "2025-03-15"
+        },
+        {
+          "kind": "highlight",
+          "text": "有些告别不是为了离开，而是为了让一段关系换一种方式留下。",
+          "note": "",
+          "chapter": "告别",
+          "created_at": "2025-03-26"
+        }
+      ]
+    },
+    {
+      "source_id": "demo-宇宙尽头的餐馆",
+      "slug": "yu-zhou-jin-tou-de-can-guan-957497",
+      "title": "宇宙尽头的餐馆",
+      "authors": [
+        "Douglas Adams"
+      ],
+      "categories": [
+        "科幻",
+        "小说"
+      ],
+      "cover": null,
+      "isbn": "9787532756544",
+      "publisher": "上海译文出版社",
+      "published": "2012",
+      "rating": 9.0,
+      "my_rating": 0,
+      "status": "want",
+      "status_label": "想读",
+      "progress": 0.0,
+      "reading_seconds": 0,
+      "reading_time_label": "未记录",
+      "reading_days": 0,
+      "words": 150000,
+      "price": null,
+      "intro": "一场关于宇宙、晚餐和终极问题的荒诞旅行。",
+      "link": "",
+      "started_at": null,
+      "finished_at": null,
+      "last_read_at": null,
+      "highlight_count": 0,
+      "note_count": 0,
+      "chapter_count": 0,
+      "highlights": []
+    }
+  ],
+  "authors": [
+    {
+      "name": "Martin Kleppmann",
+      "slug": "martin-kleppmann",
+      "books": 1,
+      "seconds": 34200
+    },
+    {
+      "name": "尤瓦尔·赫拉利",
+      "slug": "you-wa-er-he-la-li",
+      "books": 1,
+      "seconds": 26400
+    },
+    {
+      "name": "刘慈欣",
+      "slug": "liu-ci-xin",
+      "books": 1,
+      "seconds": 18320
+    },
+    {
+      "name": "兰小欢",
+      "slug": "lan-xiao-huan",
+      "books": 1,
+      "seconds": 15600
+    },
+    {
+      "name": "洛莉·戈特利布",
+      "slug": "luo-li-ge-te-li-bu",
+      "books": 1,
+      "seconds": 14400
+    },
+    {
+      "name": "加西亚·马尔克斯",
+      "slug": "jia-xi-ya-ma-er-ke-si",
+      "books": 1,
+      "seconds": 12600
+    },
+    {
+      "name": "黄仁宇",
+      "slug": "huang-ren-yu",
+      "books": 1,
+      "seconds": 11200
+    },
+    {
+      "name": "丹尼尔·卡尼曼",
+      "slug": "dan-ni-er-ka-ni-man",
+      "books": 1,
+      "seconds": 9800
+    },
+    {
+      "name": "卡尔·纽波特",
+      "slug": "ka-er-niu-bo-te",
+      "books": 1,
+      "seconds": 8400
+    },
+    {
+      "name": "余华",
+      "slug": "yu-hua",
+      "books": 1,
+      "seconds": 7200
+    },
+    {
+      "name": "Andrew Hunt",
+      "slug": "andrew-hunt",
+      "books": 1,
+      "seconds": 5600
+    },
+    {
+      "name": "David Thomas",
+      "slug": "david-thomas",
+      "books": 1,
+      "seconds": 5600
+    },
+    {
+      "name": "安托万·德·圣埃克苏佩里",
+      "slug": "an-tuo-wan-de-sheng-ai-ke-su-pei-li",
+      "books": 1,
+      "seconds": 3600
+    },
+    {
+      "name": "Robert C. Martin",
+      "slug": "robert-c-martin",
+      "books": 1,
+      "seconds": 0
+    },
+    {
+      "name": "Douglas Adams",
+      "slug": "douglas-adams",
+      "books": 1,
+      "seconds": 0
+    }
+  ],
+  "categories": [
+    {
+      "name": "文学",
+      "slug": "wen-xue",
+      "books": 4,
+      "seconds": 41720
+    },
+    {
+      "name": "技术",
+      "slug": "ji-shu",
+      "books": 3,
+      "seconds": 39800
+    },
+    {
+      "name": "工程",
+      "slug": "gong-cheng",
+      "books": 3,
+      "seconds": 39800
+    },
+    {
+      "name": "小说",
+      "slug": "xiao-shuo",
+      "books": 3,
+      "seconds": 19800
+    },
+    {
+      "name": "社科",
+      "slug": "she-ke",
+      "books": 2,
+      "seconds": 42000
+    },
+    {
+      "name": "历史",
+      "slug": "li-shi",
+      "books": 2,
+      "seconds": 37600
+    },
+    {
+      "name": "心理学",
+      "slug": "xin-li-xue",
+      "books": 2,
+      "seconds": 24200
+    },
+    {
+      "name": "科幻",
+      "slug": "ke-huan",
+      "books": 2,
+      "seconds": 18320
+    },
+    {
+      "name": "经济",
+      "slug": "jing-ji",
+      "books": 1,
+      "seconds": 15600
+    },
+    {
+      "name": "生活",
+      "slug": "sheng-huo",
+      "books": 1,
+      "seconds": 14400
+    },
+    {
+      "name": "中国史",
+      "slug": "zhong-guo-shi",
+      "books": 1,
+      "seconds": 11200
+    },
+    {
+      "name": "认知",
+      "slug": "ren-zhi",
+      "books": 1,
+      "seconds": 9800
+    },
+    {
+      "name": "效率",
+      "slug": "xiao-lv",
+      "books": 1,
+      "seconds": 8400
+    },
+    {
+      "name": "工作",
+      "slug": "gong-zuo",
+      "books": 1,
+      "seconds": 8400
+    },
+    {
+      "name": "童话",
+      "slug": "tong-hua",
+      "books": 1,
+      "seconds": 3600
+    }
+  ],
+  "daily": [
+    {
+      "date": "2025-11-12",
+      "seconds": 971
+    },
+    {
+      "date": "2025-11-13",
+      "seconds": 571
+    },
+    {
+      "date": "2025-11-14",
+      "seconds": 1129
+    },
+    {
+      "date": "2025-11-15",
+      "seconds": 1026
+    },
+    {
+      "date": "2025-11-16",
+      "seconds": 682
+    },
+    {
+      "date": "2025-11-17",
+      "seconds": 642
+    },
+    {
+      "date": "2025-11-18",
+      "seconds": 233
+    },
+    {
+      "date": "2025-11-19",
+      "seconds": 1211
+    },
+    {
+      "date": "2025-11-20",
+      "seconds": 1198
+    },
+    {
+      "date": "2025-11-21",
+      "seconds": 1117
+    },
+    {
+      "date": "2025-11-25",
+      "seconds": 1018
+    },
+    {
+      "date": "2025-11-26",
+      "seconds": 824
+    },
+    {
+      "date": "2025-11-28",
+      "seconds": 558
+    },
+    {
+      "date": "2025-11-29",
+      "seconds": 1132
+    },
+    {
+      "date": "2025-11-30",
+      "seconds": 390
+    },
+    {
+      "date": "2025-12-01",
+      "seconds": 573
+    },
+    {
+      "date": "2025-12-03",
+      "seconds": 948
+    },
+    {
+      "date": "2025-12-04",
+      "seconds": 980
+    },
+    {
+      "date": "2025-12-06",
+      "seconds": 590
+    },
+    {
+      "date": "2025-12-08",
+      "seconds": 919
+    },
+    {
+      "date": "2025-12-09",
+      "seconds": 549
+    },
+    {
+      "date": "2025-12-10",
+      "seconds": 481
+    },
+    {
+      "date": "2025-12-13",
+      "seconds": 1067
+    },
+    {
+      "date": "2025-12-15",
+      "seconds": 665
+    },
+    {
+      "date": "2025-12-16",
+      "seconds": 657
+    },
+    {
+      "date": "2025-12-17",
+      "seconds": 277
+    },
+    {
+      "date": "2025-12-18",
+      "seconds": 981
+    },
+    {
+      "date": "2025-12-19",
+      "seconds": 315
+    },
+    {
+      "date": "2025-12-20",
+      "seconds": 662
+    },
+    {
+      "date": "2025-12-24",
+      "seconds": 1233
+    },
+    {
+      "date": "2025-12-25",
+      "seconds": 942
+    },
+    {
+      "date": "2025-12-27",
+      "seconds": 752
+    },
+    {
+      "date": "2025-12-30",
+      "seconds": 382
+    },
+    {
+      "date": "2026-01-03",
+      "seconds": 800
+    },
+    {
+      "date": "2026-01-05",
+      "seconds": 888
+    },
+    {
+      "date": "2026-01-07",
+      "seconds": 611
+    },
+    {
+      "date": "2026-01-09",
+      "seconds": 692
+    },
+    {
+      "date": "2026-01-10",
+      "seconds": 226
+    },
+    {
+      "date": "2026-01-12",
+      "seconds": 193
+    },
+    {
+      "date": "2026-01-13",
+      "seconds": 1117
+    },
+    {
+      "date": "2026-01-14",
+      "seconds": 620
+    },
+    {
+      "date": "2026-01-19",
+      "seconds": 1124
+    },
+    {
+      "date": "2026-01-23",
+      "seconds": 1260
+    },
+    {
+      "date": "2026-01-25",
+      "seconds": 220
+    },
+    {
+      "date": "2026-01-26",
+      "seconds": 649
+    },
+    {
+      "date": "2026-01-27",
+      "seconds": 860
+    },
+    {
+      "date": "2026-01-28",
+      "seconds": 888
+    },
+    {
+      "date": "2026-01-29",
+      "seconds": 867
+    },
+    {
+      "date": "2026-01-31",
+      "seconds": 352
+    },
+    {
+      "date": "2026-02-01",
+      "seconds": 1293
+    },
+    {
+      "date": "2026-02-02",
+      "seconds": 763
+    },
+    {
+      "date": "2026-02-03",
+      "seconds": 648
+    },
+    {
+      "date": "2026-02-04",
+      "seconds": 199
+    },
+    {
+      "date": "2026-02-05",
+      "seconds": 527
+    },
+    {
+      "date": "2026-02-07",
+      "seconds": 959
+    },
+    {
+      "date": "2026-02-08",
+      "seconds": 1253
+    },
+    {
+      "date": "2026-02-09",
+      "seconds": 566
+    },
+    {
+      "date": "2026-02-10",
+      "seconds": 476
+    },
+    {
+      "date": "2026-02-11",
+      "seconds": 259
+    },
+    {
+      "date": "2026-02-12",
+      "seconds": 1177
+    },
+    {
+      "date": "2026-02-13",
+      "seconds": 491
+    },
+    {
+      "date": "2026-02-14",
+      "seconds": 261
+    },
+    {
+      "date": "2026-02-16",
+      "seconds": 912
+    },
+    {
+      "date": "2026-02-17",
+      "seconds": 496
+    },
+    {
+      "date": "2026-02-18",
+      "seconds": 1273
+    },
+    {
+      "date": "2026-02-19",
+      "seconds": 681
+    },
+    {
+      "date": "2026-02-20",
+      "seconds": 1083
+    },
+    {
+      "date": "2026-02-21",
+      "seconds": 838
+    },
+    {
+      "date": "2026-02-22",
+      "seconds": 936
+    },
+    {
+      "date": "2026-02-26",
+      "seconds": 542
+    },
+    {
+      "date": "2026-02-28",
+      "seconds": 540
+    },
+    {
+      "date": "2026-03-02",
+      "seconds": 1194
+    },
+    {
+      "date": "2026-03-03",
+      "seconds": 251
+    },
+    {
+      "date": "2026-03-04",
+      "seconds": 216
+    },
+    {
+      "date": "2026-03-05",
+      "seconds": 601
+    },
+    {
+      "date": "2026-03-07",
+      "seconds": 520
+    },
+    {
+      "date": "2026-03-09",
+      "seconds": 1012
+    },
+    {
+      "date": "2026-03-11",
+      "seconds": 525
+    },
+    {
+      "date": "2026-03-13",
+      "seconds": 522
+    },
+    {
+      "date": "2026-03-14",
+      "seconds": 812
+    },
+    {
+      "date": "2026-03-15",
+      "seconds": 341
+    },
+    {
+      "date": "2026-03-16",
+      "seconds": 202
+    },
+    {
+      "date": "2026-03-17",
+      "seconds": 770
+    },
+    {
+      "date": "2026-03-18",
+      "seconds": 543
+    },
+    {
+      "date": "2026-03-19",
+      "seconds": 527
+    },
+    {
+      "date": "2026-03-20",
+      "seconds": 649
+    },
+    {
+      "date": "2026-03-22",
+      "seconds": 120
+    },
+    {
+      "date": "2026-03-23",
+      "seconds": 648
+    },
+    {
+      "date": "2026-03-24",
+      "seconds": 875
+    },
+    {
+      "date": "2026-03-25",
+      "seconds": 738
+    },
+    {
+      "date": "2026-03-27",
+      "seconds": 822
+    },
+    {
+      "date": "2026-03-28",
+      "seconds": 837
+    },
+    {
+      "date": "2026-03-29",
+      "seconds": 927
+    },
+    {
+      "date": "2026-03-30",
+      "seconds": 807
+    },
+    {
+      "date": "2026-03-31",
+      "seconds": 607
+    },
+    {
+      "date": "2026-04-01",
+      "seconds": 516
+    },
+    {
+      "date": "2026-04-03",
+      "seconds": 592
+    },
+    {
+      "date": "2026-04-07",
+      "seconds": 728
+    },
+    {
+      "date": "2026-04-09",
+      "seconds": 800
+    },
+    {
+      "date": "2026-04-11",
+      "seconds": 725
+    },
+    {
+      "date": "2026-04-12",
+      "seconds": 1216
+    },
+    {
+      "date": "2026-04-15",
+      "seconds": 229
+    },
+    {
+      "date": "2026-04-16",
+      "seconds": 1237
+    },
+    {
+      "date": "2026-04-18",
+      "seconds": 925
+    },
+    {
+      "date": "2026-04-19",
+      "seconds": 1274
+    },
+    {
+      "date": "2026-04-21",
+      "seconds": 194
+    },
+    {
+      "date": "2026-04-23",
+      "seconds": 1154
+    },
+    {
+      "date": "2026-04-25",
+      "seconds": 1136
+    },
+    {
+      "date": "2026-04-28",
+      "seconds": 939
+    },
+    {
+      "date": "2026-04-30",
+      "seconds": 1095
+    },
+    {
+      "date": "2026-05-01",
+      "seconds": 233
+    },
+    {
+      "date": "2026-05-03",
+      "seconds": 769
+    },
+    {
+      "date": "2026-05-05",
+      "seconds": 330
+    },
+    {
+      "date": "2026-05-07",
+      "seconds": 478
+    },
+    {
+      "date": "2026-05-09",
+      "seconds": 795
+    },
+    {
+      "date": "2026-05-12",
+      "seconds": 605
+    },
+    {
+      "date": "2026-05-15",
+      "seconds": 383
+    },
+    {
+      "date": "2026-05-18",
+      "seconds": 557
+    },
+    {
+      "date": "2026-05-20",
+      "seconds": 666
+    },
+    {
+      "date": "2026-05-21",
+      "seconds": 1183
+    },
+    {
+      "date": "2026-05-25",
+      "seconds": 555
+    },
+    {
+      "date": "2026-05-26",
+      "seconds": 565
+    },
+    {
+      "date": "2026-05-27",
+      "seconds": 1235
+    },
+    {
+      "date": "2026-05-29",
+      "seconds": 187
+    },
+    {
+      "date": "2026-06-02",
+      "seconds": 391
+    },
+    {
+      "date": "2026-06-03",
+      "seconds": 633
+    },
+    {
+      "date": "2026-06-05",
+      "seconds": 438
+    },
+    {
+      "date": "2026-06-07",
+      "seconds": 799
+    },
+    {
+      "date": "2026-06-08",
+      "seconds": 761
+    },
+    {
+      "date": "2026-06-09",
+      "seconds": 310
+    },
+    {
+      "date": "2026-06-12",
+      "seconds": 1172
+    },
+    {
+      "date": "2026-06-13",
+      "seconds": 518
+    },
+    {
+      "date": "2026-06-14",
+      "seconds": 1061
+    },
+    {
+      "date": "2026-06-16",
+      "seconds": 1006
+    },
+    {
+      "date": "2026-06-20",
+      "seconds": 1191
+    },
+    {
+      "date": "2026-06-21",
+      "seconds": 1112
+    },
+    {
+      "date": "2026-06-26",
+      "seconds": 1226
+    },
+    {
+      "date": "2026-06-27",
+      "seconds": 1142
+    },
+    {
+      "date": "2026-06-28",
+      "seconds": 1230
+    },
+    {
+      "date": "2026-06-29",
+      "seconds": 225
+    },
+    {
+      "date": "2026-06-30",
+      "seconds": 1153
+    },
+    {
+      "date": "2026-07-01",
+      "seconds": 374
+    },
+    {
+      "date": "2026-07-04",
+      "seconds": 1257
+    },
+    {
+      "date": "2026-07-05",
+      "seconds": 889
+    },
+    {
+      "date": "2026-07-06",
+      "seconds": 538
+    },
+    {
+      "date": "2026-07-07",
+      "seconds": 1091
+    },
+    {
+      "date": "2026-07-08",
+      "seconds": 434
+    },
+    {
+      "date": "2026-07-10",
+      "seconds": 258
+    },
+    {
+      "date": "2026-07-11",
+      "seconds": 245
+    },
+    {
+      "date": "2026-07-12",
+      "seconds": 266
+    },
+    {
+      "date": "2026-07-14",
+      "seconds": 190
+    },
+    {
+      "date": "2026-07-16",
+      "seconds": 317
+    },
+    {
+      "date": "2026-07-17",
+      "seconds": 954
+    },
+    {
+      "date": "2026-07-18",
+      "seconds": 373
+    },
+    {
+      "date": "2026-07-19",
+      "seconds": 462
+    },
+    {
+      "date": "2026-07-23",
+      "seconds": 486
+    },
+    {
+      "date": "2026-07-25",
+      "seconds": 853
+    },
+    {
+      "date": "2026-07-28",
+      "seconds": 293
+    },
+    {
+      "date": "2026-07-29",
+      "seconds": 1270
+    },
+    {
+      "date": "2026-07-30",
+      "seconds": 948
+    },
+    {
+      "date": "2026-07-31",
+      "seconds": 143
+    },
+    {
+      "date": "2026-08-03",
+      "seconds": 1069
+    },
+    {
+      "date": "2026-08-04",
+      "seconds": 857
+    },
+    {
+      "date": "2026-08-05",
+      "seconds": 863
+    },
+    {
+      "date": "2026-08-07",
+      "seconds": 1217
+    },
+    {
+      "date": "2026-08-08",
+      "seconds": 253
+    },
+    {
+      "date": "2026-08-10",
+      "seconds": 629
+    },
+    {
+      "date": "2026-08-16",
+      "seconds": 443
+    },
+    {
+      "date": "2026-08-17",
+      "seconds": 246
+    },
+    {
+      "date": "2026-08-18",
+      "seconds": 1260
+    },
+    {
+      "date": "2026-08-19",
+      "seconds": 125
+    },
+    {
+      "date": "2026-08-20",
+      "seconds": 774
+    },
+    {
+      "date": "2026-08-22",
+      "seconds": 682
+    },
+    {
+      "date": "2026-08-23",
+      "seconds": 1108
+    },
+    {
+      "date": "2026-08-24",
+      "seconds": 886
+    },
+    {
+      "date": "2026-08-26",
+      "seconds": 663
+    },
+    {
+      "date": "2026-08-27",
+      "seconds": 1145
+    },
+    {
+      "date": "2026-08-28",
+      "seconds": 821
+    },
+    {
+      "date": "2026-08-29",
+      "seconds": 1280
+    },
+    {
+      "date": "2026-08-31",
+      "seconds": 1024
+    },
+    {
+      "date": "2026-09-01",
+      "seconds": 183
+    },
+    {
+      "date": "2026-09-02",
+      "seconds": 739
+    },
+    {
+      "date": "2026-09-05",
+      "seconds": 1294
+    },
+    {
+      "date": "2026-09-06",
+      "seconds": 1281
+    },
+    {
+      "date": "2026-09-07",
+      "seconds": 1181
+    },
+    {
+      "date": "2026-09-08",
+      "seconds": 619
+    },
+    {
+      "date": "2026-09-09",
+      "seconds": 564
+    },
+    {
+      "date": "2026-09-14",
+      "seconds": 148
+    },
+    {
+      "date": "2026-09-16",
+      "seconds": 1041
+    },
+    {
+      "date": "2026-09-20",
+      "seconds": 1121
+    },
+    {
+      "date": "2026-09-21",
+      "seconds": 369
+    },
+    {
+      "date": "2026-09-22",
+      "seconds": 904
+    },
+    {
+      "date": "2026-09-23",
+      "seconds": 1214
+    },
+    {
+      "date": "2026-09-24",
+      "seconds": 1114
+    },
+    {
+      "date": "2026-09-26",
+      "seconds": 221
+    },
+    {
+      "date": "2026-09-27",
+      "seconds": 160
+    },
+    {
+      "date": "2026-09-29",
+      "seconds": 869
+    },
+    {
+      "date": "2026-10-01",
+      "seconds": 1000
+    },
+    {
+      "date": "2026-10-02",
+      "seconds": 788
+    },
+    {
+      "date": "2026-10-04",
+      "seconds": 455
+    },
+    {
+      "date": "2026-10-05",
+      "seconds": 212
+    },
+    {
+      "date": "2026-10-09",
+      "seconds": 1101
+    },
+    {
+      "date": "2026-10-10",
+      "seconds": 1093
+    },
+    {
+      "date": "2026-10-11",
+      "seconds": 317
+    },
+    {
+      "date": "2026-10-12",
+      "seconds": 390
+    },
+    {
+      "date": "2026-10-15",
+      "seconds": 276
+    },
+    {
+      "date": "2026-10-16",
+      "seconds": 374
+    },
+    {
+      "date": "2026-10-17",
+      "seconds": 884
+    },
+    {
+      "date": "2026-10-18",
+      "seconds": 1319
+    },
+    {
+      "date": "2026-10-21",
+      "seconds": 777
+    },
+    {
+      "date": "2026-10-22",
+      "seconds": 619
+    },
+    {
+      "date": "2026-10-23",
+      "seconds": 295
+    },
+    {
+      "date": "2026-10-24",
+      "seconds": 860
+    },
+    {
+      "date": "2026-10-25",
+      "seconds": 1266
+    },
+    {
+      "date": "2026-10-26",
+      "seconds": 984
+    },
+    {
+      "date": "2026-10-27",
+      "seconds": 683
+    },
+    {
+      "date": "2026-10-28",
+      "seconds": 891
+    },
+    {
+      "date": "2026-10-31",
+      "seconds": 201
+    },
+    {
+      "date": "2026-11-02",
+      "seconds": 541
+    },
+    {
+      "date": "2026-11-03",
+      "seconds": 971
+    },
+    {
+      "date": "2026-11-04",
+      "seconds": 810
+    },
+    {
+      "date": "2026-11-05",
+      "seconds": 790
+    },
+    {
+      "date": "2026-11-07",
+      "seconds": 603
+    },
+    {
+      "date": "2026-11-08",
+      "seconds": 789
+    },
+    {
+      "date": "2026-11-09",
+      "seconds": 1158
+    },
+    {
+      "date": "2026-11-10",
+      "seconds": 322
+    },
+    {
+      "date": "2026-11-11",
+      "seconds": 1142
+    },
+    {
+      "date": "2026-11-12",
+      "seconds": 513
+    }
+  ],
+  "stats": {
+    "books": 14,
+    "finished": 8,
+    "reading": 4,
+    "want": 2,
+    "reading_seconds": 167320,
+    "reading_time_label": "46 小时 28 分钟",
+    "unique_reading_days": 228,
+    "highlights": 25,
+    "notes": 25,
+    "words": 3280000,
+    "authors": 15,
+    "categories": 15,
+    "by_year": [
+      {
+        "year": 2024,
+        "seconds": 19600,
+        "finished": 2
+      },
+      {
+        "year": 2025,
+        "seconds": 25675,
+        "finished": 4
+      },
+      {
+        "year": 2026,
+        "seconds": 140707,
+        "finished": 2
+      }
+    ],
+    "by_category": [
+      {
+        "name": "社科",
+        "slug": "she-ke",
+        "books": 2,
+        "seconds": 42000
+      },
+      {
+        "name": "文学",
+        "slug": "wen-xue",
+        "books": 4,
+        "seconds": 41720
+      },
+      {
+        "name": "技术",
+        "slug": "ji-shu",
+        "books": 3,
+        "seconds": 39800
+      },
+      {
+        "name": "工程",
+        "slug": "gong-cheng",
+        "books": 3,
+        "seconds": 39800
+      },
+      {
+        "name": "历史",
+        "slug": "li-shi",
+        "books": 2,
+        "seconds": 37600
+      },
+      {
+        "name": "心理学",
+        "slug": "xin-li-xue",
+        "books": 2,
+        "seconds": 24200
+      },
+      {
+        "name": "小说",
+        "slug": "xiao-shuo",
+        "books": 3,
+        "seconds": 19800
+      },
+      {
+        "name": "科幻",
+        "slug": "ke-huan",
+        "books": 2,
+        "seconds": 18320
+      },
+      {
+        "name": "经济",
+        "slug": "jing-ji",
+        "books": 1,
+        "seconds": 15600
+      },
+      {
+        "name": "生活",
+        "slug": "sheng-huo",
+        "books": 1,
+        "seconds": 14400
+      },
+      {
+        "name": "中国史",
+        "slug": "zhong-guo-shi",
+        "books": 1,
+        "seconds": 11200
+      },
+      {
+        "name": "认知",
+        "slug": "ren-zhi",
+        "books": 1,
+        "seconds": 9800
+      },
+      {
+        "name": "效率",
+        "slug": "xiao-lv",
+        "books": 1,
+        "seconds": 8400
+      },
+      {
+        "name": "工作",
+        "slug": "gong-zuo",
+        "books": 1,
+        "seconds": 8400
+      },
+      {
+        "name": "童话",
+        "slug": "tong-hua",
+        "books": 1,
+        "seconds": 3600
+      }
+    ],
+    "top_books": [
+      {
+        "slug": "she-ji-shu-ju-mi-ji-xing-ying-yong-5ad63e",
+        "title": "设计数据密集型应用",
+        "authors": [
+          "Martin Kleppmann"
+        ],
+        "reading_seconds": 34200,
+        "reading_time_label": "9 小时 30 分钟"
+      },
+      {
+        "slug": "ren-lei-jian-shi-a46983",
+        "title": "人类简史",
+        "authors": [
+          "尤瓦尔·赫拉利"
+        ],
+        "reading_seconds": 26400,
+        "reading_time_label": "7 小时 20 分钟"
+      },
+      {
+        "slug": "san-ti-0b4ee5",
+        "title": "三体",
+        "authors": [
+          "刘慈欣"
+        ],
+        "reading_seconds": 18320,
+        "reading_time_label": "5 小时 5 分钟"
+      },
+      {
+        "slug": "zhi-shen-shi-nei-7dd66a",
+        "title": "置身事内",
+        "authors": [
+          "兰小欢"
+        ],
+        "reading_seconds": 15600,
+        "reading_time_label": "4 小时 20 分钟"
+      },
+      {
+        "slug": "ye-xu-ni-gai-zhao-ge-ren-liao-liao-dfa581",
+        "title": "也许你该找个人聊聊",
+        "authors": [
+          "洛莉·戈特利布"
+        ],
+        "reading_seconds": 14400,
+        "reading_time_label": "4 小时"
+      },
+      {
+        "slug": "bai-nian-gu-du-1fdddb",
+        "title": "百年孤独",
+        "authors": [
+          "加西亚·马尔克斯"
+        ],
+        "reading_seconds": 12600,
+        "reading_time_label": "3 小时 30 分钟"
+      },
+      {
+        "slug": "wan-li-shi-wu-nian-0dbc8a",
+        "title": "万历十五年",
+        "authors": [
+          "黄仁宇"
+        ],
+        "reading_seconds": 11200,
+        "reading_time_label": "3 小时 6 分钟"
+      },
+      {
+        "slug": "si-kao-kuai-yu-man-5f38e2",
+        "title": "思考，快与慢",
+        "authors": [
+          "丹尼尔·卡尼曼"
+        ],
+        "reading_seconds": 9800,
+        "reading_time_label": "2 小时 43 分钟"
+      }
+    ],
+    "heatmap": [
+      {
+        "date": "2025-11-09",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2025-11-10",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2025-11-11",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2025-11-12",
+        "seconds": 971,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2025-11-13",
+        "seconds": 571,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2025-11-14",
+        "seconds": 1129,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2025-11-15",
+        "seconds": 1026,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2025-11-16",
+        "seconds": 682,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2025-11-17",
+        "seconds": 642,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2025-11-18",
+        "seconds": 233,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2025-11-19",
+        "seconds": 1211,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2025-11-20",
+        "seconds": 1198,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2025-11-21",
+        "seconds": 1117,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2025-11-22",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2025-11-23",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2025-11-24",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2025-11-25",
+        "seconds": 1018,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2025-11-26",
+        "seconds": 824,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2025-11-27",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2025-11-28",
+        "seconds": 558,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2025-11-29",
+        "seconds": 1132,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2025-11-30",
+        "seconds": 390,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2025-12-01",
+        "seconds": 573,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2025-12-02",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2025-12-03",
+        "seconds": 948,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2025-12-04",
+        "seconds": 980,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2025-12-05",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2025-12-06",
+        "seconds": 590,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2025-12-07",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2025-12-08",
+        "seconds": 919,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2025-12-09",
+        "seconds": 549,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2025-12-10",
+        "seconds": 481,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2025-12-11",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2025-12-12",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2025-12-13",
+        "seconds": 1067,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2025-12-14",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2025-12-15",
+        "seconds": 665,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2025-12-16",
+        "seconds": 657,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2025-12-17",
+        "seconds": 277,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2025-12-18",
+        "seconds": 981,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2025-12-19",
+        "seconds": 315,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2025-12-20",
+        "seconds": 662,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2025-12-21",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2025-12-22",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2025-12-23",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2025-12-24",
+        "seconds": 1233,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2025-12-25",
+        "seconds": 942,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2025-12-26",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2025-12-27",
+        "seconds": 752,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2025-12-28",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2025-12-29",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2025-12-30",
+        "seconds": 382,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2025-12-31",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-01-01",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-01-02",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-01-03",
+        "seconds": 800,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-01-04",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-01-05",
+        "seconds": 888,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-01-06",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-01-07",
+        "seconds": 611,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-01-08",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-01-09",
+        "seconds": 692,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-01-10",
+        "seconds": 226,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-01-11",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-01-12",
+        "seconds": 193,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-01-13",
+        "seconds": 1117,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-01-14",
+        "seconds": 620,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-01-15",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-01-16",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-01-17",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-01-18",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-01-19",
+        "seconds": 1124,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-01-20",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-01-21",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-01-22",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-01-23",
+        "seconds": 1260,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-01-24",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-01-25",
+        "seconds": 220,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-01-26",
+        "seconds": 649,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-01-27",
+        "seconds": 860,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-01-28",
+        "seconds": 888,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-01-29",
+        "seconds": 867,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-01-30",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-01-31",
+        "seconds": 352,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-02-01",
+        "seconds": 1293,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-02-02",
+        "seconds": 763,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-02-03",
+        "seconds": 648,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-02-04",
+        "seconds": 199,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-02-05",
+        "seconds": 527,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-02-06",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-02-07",
+        "seconds": 959,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-02-08",
+        "seconds": 1253,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-02-09",
+        "seconds": 566,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-02-10",
+        "seconds": 476,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-02-11",
+        "seconds": 259,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-02-12",
+        "seconds": 1177,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-02-13",
+        "seconds": 491,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-02-14",
+        "seconds": 261,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-02-15",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-02-16",
+        "seconds": 912,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-02-17",
+        "seconds": 496,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-02-18",
+        "seconds": 1273,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-02-19",
+        "seconds": 681,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-02-20",
+        "seconds": 1083,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-02-21",
+        "seconds": 838,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-02-22",
+        "seconds": 936,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-02-23",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-02-24",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-02-25",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-02-26",
+        "seconds": 542,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-02-27",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-02-28",
+        "seconds": 540,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-03-01",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-03-02",
+        "seconds": 1194,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-03-03",
+        "seconds": 251,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-03-04",
+        "seconds": 216,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-03-05",
+        "seconds": 601,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-03-06",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-03-07",
+        "seconds": 520,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-03-08",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-03-09",
+        "seconds": 1012,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-03-10",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-03-11",
+        "seconds": 525,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-03-12",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-03-13",
+        "seconds": 522,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-03-14",
+        "seconds": 812,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-03-15",
+        "seconds": 341,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-03-16",
+        "seconds": 202,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-03-17",
+        "seconds": 770,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-03-18",
+        "seconds": 543,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-03-19",
+        "seconds": 527,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-03-20",
+        "seconds": 649,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-03-21",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-03-22",
+        "seconds": 120,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-03-23",
+        "seconds": 648,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-03-24",
+        "seconds": 875,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-03-25",
+        "seconds": 738,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-03-26",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-03-27",
+        "seconds": 822,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-03-28",
+        "seconds": 837,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-03-29",
+        "seconds": 927,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-03-30",
+        "seconds": 807,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-03-31",
+        "seconds": 607,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-04-01",
+        "seconds": 516,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-04-02",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-04-03",
+        "seconds": 592,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-04-04",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-04-05",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-04-06",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-04-07",
+        "seconds": 728,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-04-08",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-04-09",
+        "seconds": 800,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-04-10",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-04-11",
+        "seconds": 725,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-04-12",
+        "seconds": 1216,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-04-13",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-04-14",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-04-15",
+        "seconds": 229,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-04-16",
+        "seconds": 1237,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-04-17",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-04-18",
+        "seconds": 925,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-04-19",
+        "seconds": 1274,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-04-20",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-04-21",
+        "seconds": 194,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-04-22",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-04-23",
+        "seconds": 1154,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-04-24",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-04-25",
+        "seconds": 1136,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-04-26",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-04-27",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-04-28",
+        "seconds": 939,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-04-29",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-04-30",
+        "seconds": 1095,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-05-01",
+        "seconds": 233,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-05-02",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-05-03",
+        "seconds": 769,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-05-04",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-05-05",
+        "seconds": 330,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-05-06",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-05-07",
+        "seconds": 478,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-05-08",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-05-09",
+        "seconds": 795,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-05-10",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-05-11",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-05-12",
+        "seconds": 605,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-05-13",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-05-14",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-05-15",
+        "seconds": 383,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-05-16",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-05-17",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-05-18",
+        "seconds": 557,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-05-19",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-05-20",
+        "seconds": 666,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-05-21",
+        "seconds": 1183,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-05-22",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-05-23",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-05-24",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-05-25",
+        "seconds": 555,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-05-26",
+        "seconds": 565,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-05-27",
+        "seconds": 1235,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-05-28",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-05-29",
+        "seconds": 187,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-05-30",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-05-31",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-06-01",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-06-02",
+        "seconds": 391,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-06-03",
+        "seconds": 633,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-06-04",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-06-05",
+        "seconds": 438,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-06-06",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-06-07",
+        "seconds": 799,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-06-08",
+        "seconds": 761,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-06-09",
+        "seconds": 310,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-06-10",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-06-11",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-06-12",
+        "seconds": 1172,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-06-13",
+        "seconds": 518,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-06-14",
+        "seconds": 1061,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-06-15",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-06-16",
+        "seconds": 1006,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-06-17",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-06-18",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-06-19",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-06-20",
+        "seconds": 1191,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-06-21",
+        "seconds": 1112,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-06-22",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-06-23",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-06-24",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-06-25",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-06-26",
+        "seconds": 1226,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-06-27",
+        "seconds": 1142,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-06-28",
+        "seconds": 1230,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-06-29",
+        "seconds": 225,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-06-30",
+        "seconds": 1153,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-07-01",
+        "seconds": 374,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-07-02",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-07-03",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-07-04",
+        "seconds": 1257,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-07-05",
+        "seconds": 889,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-07-06",
+        "seconds": 538,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-07-07",
+        "seconds": 1091,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-07-08",
+        "seconds": 434,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-07-09",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-07-10",
+        "seconds": 258,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-07-11",
+        "seconds": 245,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-07-12",
+        "seconds": 266,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-07-13",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-07-14",
+        "seconds": 190,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-07-15",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-07-16",
+        "seconds": 317,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-07-17",
+        "seconds": 954,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-07-18",
+        "seconds": 373,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-07-19",
+        "seconds": 462,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-07-20",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-07-21",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-07-22",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-07-23",
+        "seconds": 486,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-07-24",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-07-25",
+        "seconds": 853,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-07-26",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-07-27",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-07-28",
+        "seconds": 293,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-07-29",
+        "seconds": 1270,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-07-30",
+        "seconds": 948,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-07-31",
+        "seconds": 143,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-08-01",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-08-02",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-08-03",
+        "seconds": 1069,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-08-04",
+        "seconds": 857,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-08-05",
+        "seconds": 863,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-08-06",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-08-07",
+        "seconds": 1217,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-08-08",
+        "seconds": 253,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-08-09",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-08-10",
+        "seconds": 629,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-08-11",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-08-12",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-08-13",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-08-14",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-08-15",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-08-16",
+        "seconds": 443,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-08-17",
+        "seconds": 246,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-08-18",
+        "seconds": 1260,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-08-19",
+        "seconds": 125,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-08-20",
+        "seconds": 774,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-08-21",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-08-22",
+        "seconds": 682,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-08-23",
+        "seconds": 1108,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-08-24",
+        "seconds": 886,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-08-25",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-08-26",
+        "seconds": 663,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-08-27",
+        "seconds": 1145,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-08-28",
+        "seconds": 821,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-08-29",
+        "seconds": 1280,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-08-30",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-08-31",
+        "seconds": 1024,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-09-01",
+        "seconds": 183,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-09-02",
+        "seconds": 739,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-09-03",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-09-04",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-09-05",
+        "seconds": 1294,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-09-06",
+        "seconds": 1281,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-09-07",
+        "seconds": 1181,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-09-08",
+        "seconds": 619,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-09-09",
+        "seconds": 564,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-09-10",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-09-11",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-09-12",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-09-13",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-09-14",
+        "seconds": 148,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-09-15",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-09-16",
+        "seconds": 1041,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-09-17",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-09-18",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-09-19",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-09-20",
+        "seconds": 1121,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-09-21",
+        "seconds": 369,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-09-22",
+        "seconds": 904,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-09-23",
+        "seconds": 1214,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-09-24",
+        "seconds": 1114,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-09-25",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-09-26",
+        "seconds": 221,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-09-27",
+        "seconds": 160,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-09-28",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-09-29",
+        "seconds": 869,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-09-30",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-10-01",
+        "seconds": 1000,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-10-02",
+        "seconds": 788,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-10-03",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-10-04",
+        "seconds": 455,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-10-05",
+        "seconds": 212,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-10-06",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-10-07",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-10-08",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-10-09",
+        "seconds": 1101,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-10-10",
+        "seconds": 1093,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-10-11",
+        "seconds": 317,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-10-12",
+        "seconds": 390,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-10-13",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-10-14",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-10-15",
+        "seconds": 276,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-10-16",
+        "seconds": 374,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-10-17",
+        "seconds": 884,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-10-18",
+        "seconds": 1319,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-10-19",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-10-20",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-10-21",
+        "seconds": 777,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-10-22",
+        "seconds": 619,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-10-23",
+        "seconds": 295,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-10-24",
+        "seconds": 860,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-10-25",
+        "seconds": 1266,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-10-26",
+        "seconds": 984,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-10-27",
+        "seconds": 683,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-10-28",
+        "seconds": 891,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-10-29",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-10-30",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-10-31",
+        "seconds": 201,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-11-01",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-11-02",
+        "seconds": 541,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-11-03",
+        "seconds": 971,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-11-04",
+        "seconds": 810,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-11-05",
+        "seconds": 790,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-11-06",
+        "seconds": 0,
+        "level": 0,
+        "future": false
+      },
+      {
+        "date": "2026-11-07",
+        "seconds": 603,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-11-08",
+        "seconds": 789,
+        "level": 3,
+        "future": false
+      },
+      {
+        "date": "2026-11-09",
+        "seconds": 1158,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-11-10",
+        "seconds": 322,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-11-11",
+        "seconds": 1142,
+        "level": 4,
+        "future": false
+      },
+      {
+        "date": "2026-11-12",
+        "seconds": 513,
+        "level": 2,
+        "future": false
+      },
+      {
+        "date": "2026-11-13",
+        "seconds": 0,
+        "level": 0,
+        "future": true
+      },
+      {
+        "date": "2026-11-14",
+        "seconds": 0,
+        "level": 0,
+        "future": true
+      }
+    ]
+  }
+}

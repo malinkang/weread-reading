@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+{% block content %}
+<section class="hero">
+  <p class="eyebrow">A PUBLIC READING SHELF</p>
+  <h1>把读过的书，<br>放回它该在的位置。</h1>
+  <p class="hero-lede">{{ site.description }}</p>
+  <div class="hero-actions">
+    <a class="button primary" href="{{ url('/books/') }}">浏览书架</a>
+    <a class="button ghost" href="{{ url('/stats/') }}">阅读统计</a>
+  </div>
+</section>
+
+<section class="stat-strip" aria-label="阅读概览">
+  {{ macros.stat_card(stats.books, '本书', stats.finished|string + ' 本读完') }}
+  {{ macros.stat_card(stats.reading_seconds|duration_compact, '累计阅读', stats.unique_reading_days|string ~ ' 天有记录') }}
+  {{ macros.stat_card(stats.highlights, '条划线', stats.notes|string + ' 条想法') }}
+  {{ macros.stat_card(stats.authors, '位作者', stats.categories|string + ' 个主题') }}
+</section>
+
+{% if recent %}
+<section class="section">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">ON THE NIGHTSTAND</p>
+      <h2>最近在读</h2>
+    </div>
+    <a class="text-link" href="{{ url('/books/?status=reading') }}">全部在读 →</a>
+  </div>
+  <div class="book-grid book-grid-four">
+    {% for book in recent %}
+    {{ macros.book_card(book) }}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if finished %}
+<section class="section">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">FINISHED</p>
+      <h2>读完的书</h2>
+    </div>
+    <a class="text-link" href="{{ url('/books/?status=finished') }}">全部读完 →</a>
+  </div>
+  <div class="book-grid">
+    {% for book in finished %}
+    {{ macros.book_card(book) }}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if want %}
+<section class="section section-compact">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">NEXT</p>
+      <h2>待读</h2>
+    </div>
+  </div>
+  <div class="book-row-list">
+    {% for book in want %}
+    {{ macros.book_row(book) }}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="section split-section">
+  <div>
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">SUBJECTS</p>
+        <h2>阅读主题</h2>
+      </div>
+      <a class="text-link" href="{{ url('/books/') }}">全部主题 →</a>
+    </div>
+    {{ macros.topic_pills(categories, 18) }}
+  </div>
+  <div class="year-panel">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">OVER TIME</p>
+        <h2>年度阅读</h2>
+      </div>
+    </div>
+    {{ macros.year_chart(year_bars) }}
+  </div>
+</section>
+
+{% if featured %}
+<section class="section">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">FROM THE SHELF</p>
+      <h2>随手翻翻</h2>
+    </div>
+  </div>
+  <div class="book-grid">
+    {% for book in featured %}
+    {{ macros.book_card(book) }}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+{% endblock %}

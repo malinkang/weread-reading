@@ -73,6 +73,12 @@
     </div>
   </section>
 
+  {% if book.reading_heatmap_years %}
+  <section class="book-reading-heatmap" aria-label="{{ book.title }} 的每日阅读时长">
+    {{ macros.heatmap(book.reading_heatmap_years, book.reading_heatmap_default_year) }}
+  </section>
+  {% endif %}
+
   <section class="highlights-section">
     <div class="section-head">
       <div>

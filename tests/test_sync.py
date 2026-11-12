@@ -1,6 +1,7 @@
 from weread_site.sync import (
     SyncConfig,
     _attach_annotations,
+    _attach_book_daily,
     _extract_book,
     build_snapshot,
     config_from_env,
@@ -173,6 +174,51 @@ def test_relation_database_is_discovered_from_books_schema():
     assert find_relation_data_source(data_source, ("书单",)) is None
 
 
+def test_attach_book_daily_uses_book_relation_and_sums_duplicate_days():
+    book = {
+        "page_id": "book-page-1",
+        "source_id": "weread-1",
+        "reading_days": 0,
+    }
+    pages = [
+        _page(
+            "reading-log-1",
+            {
+                "书架": _relation("book-page-1"),
+                "日期": {"type": "date", "date": {"start": "2026-01-02"}},
+                "时长": {"type": "number", "number": 1200},
+            },
+        ),
+        _page(
+            "reading-log-2",
+            {
+                "书架": _relation("book-page-1"),
+                "日期": {"type": "date", "date": {"start": "2026-01-02"}},
+                "时长": {"type": "number", "number": 600},
+            },
+        ),
+        _page(
+            "reading-log-3",
+            {
+                "书架": _relation("book-page-1"),
+                "日期": {"type": "date", "date": {"start": "2026-01-03"}},
+                "时长": {"type": "number", "number": 900},
+            },
+        ),
+    ]
+    records = _attach_book_daily(
+        [book],
+        {"book-page-1": book},
+        pages,
+    )
+    assert records == 2
+    assert book["reading_days"] == 2
+    assert book["reading_daily"] == [
+        {"date": "2026-01-02", "seconds": 1800},
+        {"date": "2026-01-03", "seconds": 900},
+    ]
+
+
 def test_database_id_aliases_and_empty_site_description(monkeypatch):
     for name in (
         "WEREAD_BOOKS_DATA_SOURCE_ID",
@@ -265,6 +311,7 @@ def test_build_snapshot_accepts_books_database_id_and_discovers_relations():
             "book-db": "book-ds",
             "author-db": "author-ds",
             "category-db": "category-ds",
+            "reading-log-db": "reading-log-ds",
         }
         sources = {
             "book-ds": {
@@ -289,6 +336,15 @@ def test_build_snapshot_accepts_books_database_id_and_discovers_relations():
                 "id": "category-ds",
                 "properties": {"Name": {"type": "title"}},
             },
+            "reading-log-ds": {
+                "id": "reading-log-ds",
+                "properties": {
+                    "标题": {"type": "title"},
+                    "日期": {"type": "date"},
+                    "时长": {"type": "number"},
+                    "书架": {"type": "relation"},
+                },
+            },
         }
         rows = {
             "book-db": [
@@ -304,6 +360,20 @@ def test_build_snapshot_accepts_books_database_id_and_discovers_relations():
             ],
             "author-db": [_page("author-page", {"Name": _title("刘慈欣")})],
             "category-db": [_page("category-page", {"Name": _title("科幻")})],
+            "reading-log-db": [
+                _page(
+                    "reading-log-1",
+                    {
+                        "标题": _title("2026年01月02日"),
+                        "日期": {
+                            "type": "date",
+                            "date": {"start": "2026-01-02"},
+                        },
+                        "时长": {"type": "number", "number": 1800},
+                        "书架": _relation("book-page"),
+                    },
+                )
+            ],
         }
 
         def resolve_data_source_id(self, identifier):
@@ -320,11 +390,16 @@ def test_build_snapshot_accepts_books_database_id_and_discovers_relations():
             books_data_source_id="book-db",
             authors_data_source_id=None,
             categories_data_source_id=None,
+            reading_log_data_source_id="reading-log-db",
         ),
         api=FakeAPI(),
     )
     assert snapshot["books"][0]["title"] == "三体"
     assert snapshot["books"][0]["authors"] == ["刘慈欣"]
     assert snapshot["books"][0]["categories"] == ["科幻"]
+    assert snapshot["books"][0]["reading_daily"] == [
+        {"date": "2026-01-02", "seconds": 1800}
+    ]
+    assert snapshot["books"][0]["reading_days"] == 1
     assert "page_id" not in snapshot["books"][0]
     assert "book-page" not in str(snapshot)

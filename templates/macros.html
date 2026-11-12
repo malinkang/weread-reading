@@ -75,8 +75,9 @@
 </div>
 {% endmacro %}
 
-{% macro heatmap(years, default_year) %}
+{% macro heatmap(years, default_year, show_year=True) %}
 <div class="heatmap-card" data-heatmap>
+  {% if show_year and years|length > 1 %}
   <div class="heatmap-toolbar">
     <div class="heatmap-year">
       <span class="heatmap-year-control">
@@ -88,6 +89,7 @@
       </span>
     </div>
   </div>
+  {% endif %}
 
   <div class="heatmap-scroll">
     {% for item in years|reverse %}

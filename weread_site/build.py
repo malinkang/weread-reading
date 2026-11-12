@@ -419,6 +419,16 @@ class SiteBuilder:
             book.setdefault("status_label", STATUS_LABELS.get(book["status"], "想读"))
             book.setdefault("reading_time_label", reading_time_label(book.get("reading_seconds")))
             book["highlight_groups"] = _highlight_groups(book)
+            reading_daily = list(book.get("reading_daily") or [])
+            if reading_daily:
+                heatmap_years = [
+                    item
+                    for item in compute_year_heatmaps(reading_daily)
+                    if item["active_days"]
+                ]
+                if heatmap_years:
+                    book["reading_heatmap_years"] = heatmap_years
+                    book["reading_heatmap_default_year"] = heatmap_years[-1]["year"]
         _prepare_covers(
             books,
             self.output,

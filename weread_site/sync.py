@@ -460,6 +460,71 @@ def _attach_annotations(
         )
 
 
+def _attach_book_daily(
+    books: list[dict[str, Any]],
+    book_lookup: dict[str, dict[str, Any]],
+    pages: Iterable[dict[str, Any]],
+    title_key: str | None = None,
+) -> int:
+    totals: dict[str, dict[str, int]] = {}
+    for page in pages:
+        props = page.get("properties") or {}
+        book_keys = _relation_ids(
+            prop_from(props, ("书架", "书籍", "Book", "Books"))
+        )
+        if not book_keys:
+            book_keys = _relation_ids(
+                prop_from(props, ("BookId", "bookId", "书籍ID"))
+            )
+        if not book_keys:
+            continue
+        parsed = parse_date(
+            prop_from(
+                props,
+                ("日期", "Date", "时间", "Title"),
+                title_key=title_key,
+            )
+        )
+        if not parsed:
+            continue
+        seconds = int(
+            as_number(
+                prop_from(
+                    props,
+                    ("时长", "阅读时长", "Duration", "Seconds"),
+                    default=0,
+                )
+            )
+            or 0
+        )
+        if seconds <= 0:
+            continue
+        book = next(
+            (book_lookup[key] for key in book_keys if key in book_lookup),
+            None,
+        )
+        if not book:
+            continue
+        day_totals = totals.setdefault(book["page_id"], {})
+        day_key = parsed.isoformat()
+        day_totals[day_key] = day_totals.get(day_key, 0) + seconds
+
+    record_count = 0
+    for book in books:
+        day_totals = totals.get(book["page_id"])
+        if not day_totals:
+            continue
+        reading_daily = [
+            {"date": day, "seconds": seconds}
+            for day, seconds in sorted(day_totals.items())
+        ]
+        book["reading_daily"] = reading_daily
+        if not int(book.get("reading_days") or 0):
+            book["reading_days"] = len(reading_daily)
+        record_count += len(reading_daily)
+    return record_count
+
+
 def build_snapshot(config: SyncConfig, api: NotionAPI | None = None) -> dict[str, Any]:
     api = api or NotionAPI(
         config.token,
@@ -549,11 +614,38 @@ def build_snapshot(config: SyncConfig, api: NotionAPI | None = None) -> dict[str
     daily_pages, daily_title_key = _optional_pages(
         api, config.daily_data_source_id, "daily reading"
     )
+    reading_log_pages: list[dict[str, Any]] | None = None
+    reading_log_title_key: str | None = None
     if not daily_pages and config.reading_log_data_source_id:
-        daily_pages, daily_title_key = _optional_pages(
+        reading_log_pages, reading_log_title_key = _optional_pages(
             api, config.reading_log_data_source_id, "reading log"
         )
+        daily_pages, daily_title_key = reading_log_pages, reading_log_title_key
     daily = normalize_daily(daily_pages, daily_title_key)
+    if config.reading_log_data_source_id and reading_log_pages is None:
+        reading_log_pages, reading_log_title_key = _optional_pages(
+            api,
+            config.reading_log_data_source_id,
+            "book reading log",
+            strict=False,
+        )
+    book_lookup = dict(page_to_book)
+    for book in books:
+        source_id = as_text(book.get("source_id"))
+        if source_id:
+            book_lookup[source_id] = book
+    book_daily_records = _attach_book_daily(
+        books,
+        book_lookup,
+        reading_log_pages or [],
+        reading_log_title_key,
+    )
+    if book_daily_records:
+        LOG.info(
+            "attached per-book daily reading to %d books (%d book-days)",
+            sum(1 for book in books if book.get("reading_daily")),
+            book_daily_records,
+        )
 
     books.sort(
         key=lambda item: (
@@ -582,6 +674,7 @@ def build_snapshot(config: SyncConfig, api: NotionAPI | None = None) -> dict[str
             "highlights": sum(int(book.get("highlight_count") or 0) for book in books),
             "notes": sum(int(book.get("note_count") or 0) for book in books),
             "daily_records": len(daily),
+            "book_daily_records": book_daily_records,
             "include_highlights": config.include_highlights,
             "include_reviews": config.include_reviews,
         },

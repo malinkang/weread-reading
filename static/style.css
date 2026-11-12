@@ -663,6 +663,7 @@ html[data-theme="dark"] .theme-button .moon { display: block; }
 .meter-track { height: 7px; margin-top: 10px; background: var(--surface-2); border-radius: 999px; overflow: hidden; }
 .meter-track span { display: block; height: 100%; background: var(--accent); border-radius: inherit; }
 .reading-meter-dates { display: flex; justify-content: space-between; gap: 20px; margin-top: 8px; color: var(--faint); font-size: 10px; }
+.book-reading-heatmap { margin-top: 40px; }
 
 .highlights-section { margin-top: 58px; }
 .highlight-group { margin-top: 34px; }
@@ -972,6 +973,7 @@ button.heat-cell:focus-visible {
   .reading-meter { margin-top: 26px; }
   .reading-meter-dates { display: block; }
   .reading-meter-dates span { display: block; margin-top: 3px; }
+  .book-reading-heatmap { margin-top: 32px; }
   .highlight { padding-left: 14px; }
   .highlight blockquote { font-size: 17px; }
   .bar-row { grid-template-columns: 54px minmax(0, 1fr) 78px; }

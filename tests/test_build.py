@@ -155,3 +155,31 @@ def test_rebuild_cleans_stale_output_and_uses_absolute_og_images(tmp_path: Path)
     page = book_page.read_text(encoding="utf-8")
     assert '<meta property="og:image" content="https://example.com/assets/covers/' in page
     assert '"image": "https://example.com/assets/covers/' in page
+
+
+def test_book_detail_renders_heatmap_for_book_daily_history(tmp_path: Path):
+    snapshot_data = demo_snapshot()
+    snapshot_data["books"][0]["reading_daily"] = [
+        {"date": "2026-01-03", "seconds": 1200},
+        {"date": "2026-01-04", "seconds": 2400},
+        {"date": "2025-12-31", "seconds": 600},
+    ]
+    snapshot = tmp_path / "snapshot.json"
+    snapshot.write_text(
+        json.dumps(snapshot_data, ensure_ascii=False), encoding="utf-8"
+    )
+    output = tmp_path / "site"
+    build_site(
+        BuildConfig(
+            snapshot=snapshot,
+            output=output,
+            download_covers=False,
+            cover_cache=tmp_path / "covers",
+        )
+    )
+    slug = snapshot_data["books"][0]["slug"]
+    page = (output / "book" / slug / "index.html").read_text(encoding="utf-8")
+    assert 'class="book-reading-heatmap"' in page
+    assert 'data-heatmap-panel="2026"' in page
+    assert 'data-heatmap-panel="2025"' in page
+    assert 'id="heatmap-year"' in page

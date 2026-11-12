@@ -238,6 +238,55 @@ def test_attach_book_daily_uses_book_relation_and_sums_duplicate_days():
     ]
 
 
+def test_attach_book_daily_merges_sources_without_double_counting():
+    book = {
+        "page_id": "book-page-1",
+        "source_id": "weread-1",
+        "reading_days": 2,
+        "reading_daily": [
+            {"date": "2026-01-02", "seconds": 1800},
+            {"date": "2026-01-03", "seconds": 100},
+        ],
+    }
+    pages = [
+        _page(
+            "reading-log-1",
+            {
+                "书架": _relation("book-page-1"),
+                "日期": {"type": "date", "date": {"start": "2026-01-02"}},
+                "时长": {"type": "number", "number": 1200},
+            },
+        ),
+        _page(
+            "reading-log-2",
+            {
+                "书架": _relation("book-page-1"),
+                "日期": {"type": "date", "date": {"start": "2026-01-03"}},
+                "时长": {"type": "number", "number": 300},
+            },
+        ),
+        _page(
+            "reading-log-3",
+            {
+                "书架": _relation("book-page-1"),
+                "日期": {"type": "date", "date": {"start": "2026-01-04"}},
+                "时长": {"type": "number", "number": 500},
+            },
+        ),
+    ]
+    _attach_book_daily(
+        [book],
+        {"book-page-1": book},
+        pages,
+    )
+    assert book["reading_daily"] == [
+        {"date": "2026-01-02", "seconds": 1800},
+        {"date": "2026-01-03", "seconds": 300},
+        {"date": "2026-01-04", "seconds": 500},
+    ]
+    assert book["reading_days"] == 2
+
+
 def test_database_id_aliases_and_empty_site_description(monkeypatch):
     for name in (
         "WEREAD_BOOKS_DATA_SOURCE_ID",

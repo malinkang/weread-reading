@@ -533,9 +533,16 @@ def _attach_book_daily(
         day_totals = totals.get(book["page_id"])
         if not day_totals:
             continue
+        merged = {
+            item["date"]: int(item["seconds"])
+            for item in book.get("reading_daily") or []
+            if item.get("date")
+        }
+        for day, seconds in day_totals.items():
+            merged[day] = max(merged.get(day, 0), seconds)
         reading_daily = [
             {"date": day, "seconds": seconds}
-            for day, seconds in sorted(day_totals.items())
+            for day, seconds in sorted(merged.items())
         ]
         book["reading_daily"] = reading_daily
         if not int(book.get("reading_days") or 0):
@@ -659,25 +666,32 @@ def build_snapshot(config: SyncConfig, api: NotionAPI | None = None) -> dict[str
         source_id = as_text(book.get("source_id"))
         if source_id:
             book_lookup[source_id] = book
-    book_daily_records = _attach_book_daily(
-        books,
-        book_lookup,
-        reading_log_pages or [],
-        reading_log_title_key,
-    )
-    book_daily_source = "reading log"
-    if not book_daily_records and daily_pages and daily_pages is not reading_log_pages:
-        book_daily_records = _attach_book_daily(
+    book_daily_sources: list[str] = []
+    if reading_log_pages:
+        attached = _attach_book_daily(
+            books,
+            book_lookup,
+            reading_log_pages,
+            reading_log_title_key,
+        )
+        if attached:
+            book_daily_sources.append("reading log")
+    if daily_pages and daily_pages is not reading_log_pages:
+        attached = _attach_book_daily(
             books,
             book_lookup,
             daily_pages,
             daily_title_key,
         )
-        book_daily_source = "daily reading"
+        if attached:
+            book_daily_sources.append("daily reading")
+    book_daily_records = sum(
+        len(book.get("reading_daily") or []) for book in books
+    )
     if book_daily_records:
         LOG.info(
             "attached per-book daily reading from %s to %d books (%d book-days)",
-            book_daily_source,
+            " + ".join(book_daily_sources),
             sum(1 for book in books if book.get("reading_daily")),
             book_daily_records,
         )

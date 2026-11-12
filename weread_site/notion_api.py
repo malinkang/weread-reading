@@ -154,7 +154,8 @@ class NotionAPI:
             except NotionAPIError as database_error:
                 raise NotionAPIError(
                     "Notion ID is neither a readable data source nor database: "
-                    f"{raw} ({error}; {database_error})"
+                    f"{raw} ({error}; {database_error})",
+                    database_error.status_code or error.status_code,
                 ) from database_error
             candidates = database.get("data_sources") or []
             initial = database.get("initial_data_source") or {}

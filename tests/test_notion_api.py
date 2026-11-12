@@ -59,3 +59,15 @@ def test_database_without_a_data_source_is_rejected():
     api.request = fake_request
     with pytest.raises(NotionAPIError, match="does not expose a data source"):
         api.resolve_data_source_id("database-id")
+
+
+def test_unreadable_database_keeps_not_found_status():
+    api = NotionAPI("test-token", request_interval=0)
+
+    def fake_request(method, path, *, json_body=None):
+        raise NotionAPIError("not found", 404)
+
+    api.request = fake_request
+    with pytest.raises(NotionAPIError) as raised:
+        api.resolve_data_source_id("missing-database")
+    assert raised.value.status_code == 404

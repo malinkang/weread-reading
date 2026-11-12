@@ -96,6 +96,226 @@
   }
   updateMenuButton();
 
+  function setupHeatmap() {
+    var heatmap = document.querySelector("[data-heatmap]");
+    if (!heatmap) return;
+    var yearSelect = document.getElementById("heatmap-year");
+    var tooltip = document.getElementById("heatmap-tooltip");
+    var panels = Array.prototype.slice.call(
+      heatmap.querySelectorAll("[data-heatmap-panel]")
+    );
+    var scroller = heatmap.querySelector(".heatmap-scroll");
+    var hideTimer = null;
+    var activeCell = null;
+    if (!panels.length || !tooltip) return;
+
+    function panelCells(panel) {
+      return Array.prototype.slice.call(
+        panel.querySelectorAll("[data-heatmap-cell]")
+      );
+    }
+
+    function setRovingTabIndex(panel, target) {
+      panelCells(panel).forEach(function (cell) {
+        cell.tabIndex = cell === target ? 0 : -1;
+      });
+    }
+
+    function firstCell(panel) {
+      var cells = panelCells(panel);
+      return cells.find(function (cell) {
+        return !cell.classList.contains("is-future");
+      }) || cells[0];
+    }
+
+    function clearTooltip() {
+      if (hideTimer) {
+        clearTimeout(hideTimer);
+        hideTimer = null;
+      }
+      activeCell = null;
+      tooltip.hidden = true;
+      tooltip.textContent = "";
+      tooltip.classList.remove("is-below");
+    }
+
+    function positionTooltip(cell) {
+      if (!cell || tooltip.hidden) return;
+      var anchor = cell.getBoundingClientRect();
+      var box = tooltip.getBoundingClientRect();
+      var gap = 10;
+      var spaceAbove = anchor.top;
+      var spaceBelow = window.innerHeight - anchor.bottom;
+      var below = spaceAbove < box.height + gap + 8 && spaceBelow > spaceAbove;
+      var top = below
+        ? anchor.bottom + gap
+        : anchor.top - box.height - gap;
+      var left = anchor.left + anchor.width / 2 - box.width / 2;
+      left = Math.max(12, Math.min(left, window.innerWidth - box.width - 12));
+      top = Math.max(8, Math.min(top, window.innerHeight - box.height - 8));
+      tooltip.style.left = left + "px";
+      tooltip.style.top = top + "px";
+      tooltip.classList.toggle("is-below", below);
+      var arrowLeft = anchor.left + anchor.width / 2 - left;
+      arrowLeft = Math.max(12, Math.min(arrowLeft, box.width - 12));
+      tooltip.style.setProperty("--arrow-left", arrowLeft + "px");
+    }
+
+    function showTooltip(cell) {
+      if (!cell) return;
+      if (hideTimer) {
+        clearTimeout(hideTimer);
+        hideTimer = null;
+      }
+      activeCell = cell;
+      tooltip.textContent = cell.getAttribute("aria-label") || "";
+      tooltip.hidden = false;
+      positionTooltip(cell);
+    }
+
+    function scheduleTooltipHide() {
+      if (hideTimer) clearTimeout(hideTimer);
+      hideTimer = window.setTimeout(clearTooltip, 160);
+    }
+
+    function activateYear(year, persist) {
+      var panel = panels.find(function (item) {
+        return item.getAttribute("data-heatmap-panel") === String(year);
+      });
+      if (!panel) return;
+      panels.forEach(function (item) {
+        item.hidden = item !== panel;
+      });
+      if (yearSelect) yearSelect.value = String(year);
+      var target = panel.querySelector('[data-heatmap-cell][tabindex="0"]') ||
+        firstCell(panel);
+      if (target) setRovingTabIndex(panel, target);
+      if (scroller) scroller.scrollLeft = 0;
+      clearTooltip();
+      if (persist) {
+        try {
+          localStorage.setItem("weread.heatmap-year", String(year));
+        } catch (e) {}
+      }
+    }
+
+    if (yearSelect) {
+      yearSelect.addEventListener("change", function () {
+        activateYear(yearSelect.value, true);
+      });
+      try {
+        var savedYear = localStorage.getItem("weread.heatmap-year");
+        if (
+          savedYear &&
+          yearSelect.querySelector('option[value="' + savedYear + '"]')
+        ) {
+          activateYear(savedYear, false);
+        }
+      } catch (e) {}
+    }
+
+    heatmap.addEventListener("pointerover", function (event) {
+      if (event.pointerType === "touch") return;
+      var cell = event.target.closest("[data-heatmap-cell]");
+      if (cell) showTooltip(cell);
+    });
+    heatmap.addEventListener("pointerout", function (event) {
+      var cell = event.target.closest("[data-heatmap-cell]");
+      if (!cell) return;
+      var next = event.relatedTarget;
+      if (next && (cell.contains(next) || tooltip.contains(next))) return;
+      scheduleTooltipHide();
+    });
+    tooltip.addEventListener("pointerenter", function () {
+      if (hideTimer) {
+        clearTimeout(hideTimer);
+        hideTimer = null;
+      }
+    });
+    tooltip.addEventListener("pointerleave", scheduleTooltipHide);
+
+    heatmap.addEventListener("focusin", function (event) {
+      var cell = event.target.closest("[data-heatmap-cell]");
+      if (!cell) return;
+      var panel = cell.closest("[data-heatmap-panel]");
+      if (panel) setRovingTabIndex(panel, cell);
+      showTooltip(cell);
+    });
+    heatmap.addEventListener("focusout", function (event) {
+      if (event.relatedTarget && tooltip.contains(event.relatedTarget)) return;
+      scheduleTooltipHide();
+    });
+    heatmap.addEventListener("click", function (event) {
+      var cell = event.target.closest("[data-heatmap-cell]");
+      if (cell) showTooltip(cell);
+    });
+    document.addEventListener("pointerdown", function (event) {
+      if (!heatmap.contains(event.target)) clearTooltip();
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && !tooltip.hidden) {
+        clearTooltip();
+      }
+    });
+
+    heatmap.addEventListener("keydown", function (event) {
+      var cell = event.target.closest("[data-heatmap-cell]");
+      if (!cell) return;
+      var panel = cell.closest("[data-heatmap-panel]");
+      var weeks = Array.prototype.slice.call(
+        panel.querySelectorAll(".heatmap-week")
+      );
+      var weekIndex = weeks.indexOf(cell.parentElement);
+      var dayIndex = Array.prototype.indexOf.call(
+        cell.parentElement.children,
+        cell
+      );
+      var nextWeek = weekIndex;
+      var nextDay = dayIndex;
+      if (event.key === "ArrowUp") nextDay -= 1;
+      else if (event.key === "ArrowDown") nextDay += 1;
+      else if (event.key === "ArrowLeft") nextWeek -= 1;
+      else if (event.key === "ArrowRight") nextWeek += 1;
+      else if (event.key === "Home") {
+        nextWeek = 0;
+        nextDay = 0;
+      } else if (event.key === "End") {
+        nextWeek = weeks.length - 1;
+        nextDay = 6;
+      } else {
+        return;
+      }
+      event.preventDefault();
+      while (
+        nextWeek >= 0 && nextWeek < weeks.length &&
+        nextDay >= 0 && nextDay < 7
+      ) {
+        var target = weeks[nextWeek].children[nextDay];
+        if (target && target.matches("[data-heatmap-cell]")) {
+          target.focus();
+          target.scrollIntoView({ block: "nearest", inline: "nearest" });
+          return;
+        }
+        if (event.key === "ArrowUp") nextDay -= 1;
+        else if (event.key === "ArrowDown") nextDay += 1;
+        else if (event.key === "ArrowLeft") nextWeek -= 1;
+        else if (event.key === "ArrowRight") nextWeek += 1;
+        else if (event.key === "Home") nextWeek += 1;
+        else if (event.key === "End") nextWeek -= 1;
+        else return;
+      }
+    });
+
+    function repositionTooltip() {
+      if (activeCell) positionTooltip(activeCell);
+    }
+    if (scroller) {
+      scroller.addEventListener("scroll", repositionTooltip, { passive: true });
+    }
+    window.addEventListener("scroll", repositionTooltip, { passive: true });
+    window.addEventListener("resize", repositionTooltip);
+  }
+
   function normalize(value) {
     return String(value || "").toLowerCase().trim();
   }
@@ -243,6 +463,7 @@
     load();
   }
 
+  setupHeatmap();
   setupBookFilters();
   setupSearchPage();
 })();

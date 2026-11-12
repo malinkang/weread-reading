@@ -373,6 +373,117 @@ def compute_heatmap(daily: list[dict[str, Any]], days: int = 371) -> list[dict[s
     return cells
 
 
+WEEKDAY_LABELS = ("周一", "周二", "周三", "周四", "周五", "周六", "周日")
+
+
+def compute_year_heatmaps(
+    daily: list[dict[str, Any]], today: date | None = None
+) -> list[dict[str, Any]]:
+    """Build Monday-first calendars for data years plus the current year."""
+    today = today or now_shanghai().date()
+    by_date = {
+        parsed: int(item.get("seconds") or 0)
+        for item in daily
+        if (parsed := parse_date(item.get("date"))) is not None
+    }
+    non_zero = sorted(seconds for seconds in by_date.values() if seconds > 0)
+    thresholds: list[int] = []
+    if non_zero:
+        thresholds = [
+            non_zero[int((len(non_zero) - 1) * quantile)]
+            for quantile in (0.25, 0.5, 0.75)
+        ]
+    years = sorted({day.year for day in by_date} | {today.year})
+    result: list[dict[str, Any]] = []
+    for year in years:
+        jan_first = date(year, 1, 1)
+        dec_last = date(year, 12, 31)
+        grid_start = jan_first - timedelta(days=jan_first.weekday())
+        grid_end = dec_last + timedelta(days=6 - dec_last.weekday())
+        cells: list[dict[str, Any] | None] = []
+        cursor = grid_start
+        while cursor <= grid_end:
+            if cursor.year != year:
+                cells.append(None)
+            else:
+                seconds = by_date.get(cursor, 0)
+                future = cursor > today
+                level = 0
+                if seconds > 0 and not future:
+                    level = 1 + sum(seconds > threshold for threshold in thresholds)
+                duration = reading_time_label(seconds)
+                date_label = f"{cursor.month}月{cursor.day}日 {WEEKDAY_LABELS[cursor.weekday()]}"
+                if future:
+                    tooltip = f"{date_label} · 尚未到来"
+                elif seconds:
+                    tooltip = f"{date_label} · {duration}"
+                else:
+                    tooltip = f"{date_label} · 无阅读记录"
+                cells.append(
+                    {
+                        "date": cursor.isoformat(),
+                        "date_label": date_label,
+                        "seconds": seconds,
+                        "duration": duration,
+                        "level": level,
+                        "future": future,
+                        "today": cursor == today,
+                        "tooltip": tooltip,
+                    }
+                )
+            cursor += timedelta(days=1)
+
+        weeks = []
+        for index in range(0, len(cells), 7):
+            week = cells[index : index + 7]
+            in_year = [cell for cell in week if cell is not None]
+            month_label = ""
+            if index == 0:
+                month_label = f"{jan_first.month}月"
+            else:
+                first_days = [
+                    cell for cell in in_year if cell["date"][8:10] == "01"
+                ]
+                if first_days:
+                    month = int(first_days[0]["date"][5:7])
+                    month_label = f"{month}月"
+            weeks.append({"cells": week, "month_label": month_label})
+
+        active_days = sum(
+            1
+            for cell in cells
+            if cell is not None and not cell["future"] and cell["seconds"] > 0
+        )
+        reading_seconds = sum(
+            cell["seconds"]
+            for cell in cells
+            if cell is not None and cell["seconds"] > 0
+        )
+        longest_streak = 0
+        current_streak = 0
+        cursor = jan_first
+        last_day = min(dec_last, today)
+        while cursor <= last_day:
+            if by_date.get(cursor, 0) > 0:
+                current_streak += 1
+                longest_streak = max(longest_streak, current_streak)
+            else:
+                current_streak = 0
+            cursor += timedelta(days=1)
+        result.append(
+            {
+                "year": year,
+                "weeks": weeks,
+                "active_days": active_days,
+                "reading_seconds": reading_seconds,
+                "reading_time": reading_time_label(reading_seconds),
+                "reading_time_compact": reading_time_compact(reading_seconds),
+                "longest_streak": longest_streak,
+            }
+        )
+    return result
+
+
 def compute_stats(books: list[dict[str, Any]], daily: list[dict[str, Any]]) -> dict[str, Any]:
     finished = [book for book in books if book.get("status") == "finished"]
     reading = [book for book in books if book.get("status") == "reading"]

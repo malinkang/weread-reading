@@ -91,6 +91,36 @@ def test_sidebar_toggle_is_accessible_and_persistent(tmp_path: Path):
     assert "weread.sidebar" in script
 
 
+def test_stats_page_has_year_switch_and_custom_heatmap_tooltips(tmp_path: Path):
+    snapshot = tmp_path / "snapshot.json"
+    snapshot.write_text(
+        json.dumps(demo_snapshot(), ensure_ascii=False), encoding="utf-8"
+    )
+    output = tmp_path / "site"
+    build_site(
+        BuildConfig(
+            snapshot=snapshot,
+            output=output,
+            download_covers=False,
+            cover_cache=tmp_path / "covers",
+        )
+    )
+
+    stats = (output / "stats" / "index.html").read_text(encoding="utf-8")
+    assert 'id="heatmap-year"' in stats
+    assert 'id="heatmap-tooltip"' in stats
+    assert stats.count('data-heatmap-panel="') >= 2
+    assert "data-heatmap-cell" in stats
+    assert "悬停或聚焦方块" in stats
+
+    css = next((output / "assets").glob("style.*.css")).read_text(encoding="utf-8")
+    script = next((output / "assets").glob("app.*.js")).read_text(encoding="utf-8")
+    assert "--heat-4" in css
+    assert ".heatmap-tooltip" in css
+    assert "weread.heatmap-year" in script
+    assert 'event.key === "ArrowLeft"' in script
+
+
 def test_rebuild_cleans_stale_output_and_uses_absolute_og_images(tmp_path: Path):
     app_root = Path(__file__).resolve().parents[1]
     snapshot = tmp_path / "snapshot.json"

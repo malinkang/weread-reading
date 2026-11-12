@@ -24,6 +24,7 @@ from .model import (
     aggregate_entities,
     as_number,
     compute_stats,
+    compute_year_heatmaps,
     date_text,
     make_search_index,
     normalize_daily,
@@ -241,11 +242,6 @@ def _category_bars(stats: dict[str, Any]) -> list[dict[str, Any]]:
     return categories
 
 
-def _heatmap_weeks(stats: dict[str, Any]) -> list[list[dict[str, Any]]]:
-    cells = list(stats.get("heatmap") or [])
-    return [cells[index : index + 7] for index in range(0, len(cells), 7)]
-
-
 def _related_books(book: dict[str, Any], books: list[dict[str, Any]]) -> list[dict[str, Any]]:
     categories = set(book.get("categories") or [])
     authors = set(book.get("authors") or [])
@@ -448,6 +444,15 @@ class SiteBuilder:
         self.snapshot["authors"] = aggregate_entities(books, "authors")
         self.snapshot["categories"] = aggregate_entities(books, "categories")
         stats = self.snapshot["stats"]
+        heatmap_years = compute_year_heatmaps(list(self.snapshot.get("daily") or []))
+        heatmap_default_year = next(
+            (
+                item["year"]
+                for item in reversed(heatmap_years)
+                if item["active_days"]
+            ),
+            heatmap_years[-1]["year"] if heatmap_years else "",
+        )
         recent = [book for book in books if book.get("status") == "reading"][:4]
         finished = [book for book in books if book.get("status") == "finished"][:8]
         want = [book for book in books if book.get("status") == "want"][:4]
@@ -558,7 +563,8 @@ class SiteBuilder:
                 path="/stats/",
                 year_bars=_year_bars(stats),
                 category_bars=_category_bars(stats),
-                heatmap_weeks=_heatmap_weeks(stats),
+                heatmap_years=heatmap_years,
+                heatmap_default_year=heatmap_default_year,
                 top_books=stats.get("top_books") or [],
             ),
         )

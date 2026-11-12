@@ -75,16 +75,80 @@
 </div>
 {% endmacro %}
 
-{% macro heatmap(weeks) %}
-<div class="heatmap" role="img" aria-label="最近一年的阅读热力图">
-  {% for week in weeks %}
-  <div class="heatmap-week">
-    {% for cell in week %}
-    <span class="heat-cell level-{{ cell.level }}"
-          title="{{ cell.date }}{% if cell.seconds %} · {{ cell.seconds|duration }}{% endif %}"></span>
+{% macro heatmap(years, default_year) %}
+<div class="heatmap-card" data-heatmap>
+  <div class="heatmap-toolbar">
+    <p class="heatmap-instruction">悬停或聚焦方块查看当天阅读时长</p>
+    <span class="heatmap-mobile-hint">左右滑动查看全年</span>
+    <label class="heatmap-year">
+      <span>年份</span>
+      <span class="heatmap-year-control">
+        <select id="heatmap-year" aria-label="切换热力图年份">
+          {% for item in years|reverse %}
+          <option value="{{ item.year }}" {{ 'selected' if item.year == default_year else '' }}>{{ item.year }} 年</option>
+          {% endfor %}
+        </select>
+      </span>
+    </label>
+  </div>
+
+  <div class="heatmap-scroll">
+    {% for item in years|reverse %}
+    <section class="heatmap-panel" data-heatmap-panel="{{ item.year }}"
+             {{ 'hidden' if item.year != default_year else '' }}>
+      <p class="heatmap-year-summary">
+        <strong>{{ item.year }}</strong>
+        <span>{{ item.reading_time_compact }}</span>
+        <span>{{ item.active_days }} 天有阅读</span>
+        <span>最长连续 {{ item.longest_streak }} 天</span>
+      </p>
+      <div class="calendar-heatmap" role="grid" aria-label="{{ item.year }} 年每日阅读时长">
+        <div class="heatmap-month-row" aria-hidden="true">
+          <span class="heatmap-month-spacer"></span>
+          <div class="heatmap-months" style="--heat-weeks: {{ item.weeks|length }}">
+            {% for week in item.weeks %}
+            <span>{{ week.month_label }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="heatmap-calendar-body">
+          <div class="heatmap-weekdays" aria-hidden="true">
+            <span></span><span>一</span><span></span><span>三</span><span></span><span>五</span><span></span>
+          </div>
+          <div class="heatmap-weeks">
+            {% set cell_state = namespace(active=false) %}
+            {% for week in item.weeks %}
+            <div class="heatmap-week" role="row">
+              {% for cell in week.cells %}
+              {% if cell %}
+              <button class="heat-cell level-{{ cell.level }}{{ ' is-future' if cell.future else '' }}{{ ' is-today' if cell.today else '' }}"
+                      type="button" role="gridcell"
+                      tabindex="{{ '0' if not cell_state.active and not cell.future else '-1' }}"
+                      data-heatmap-cell
+                      aria-label="{{ cell.tooltip }}"></button>
+              {% if not cell_state.active and not cell.future %}{% set cell_state.active = true %}{% endif %}
+              {% else %}
+              <span class="heat-cell heat-cell-empty" aria-hidden="true"></span>
+              {% endif %}
+              {% endfor %}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="heatmap-legend" aria-label="阅读时长由少到多">
+        <span>少</span>
+        <i class="heat-cell level-0"></i>
+        <i class="heat-cell level-1"></i>
+        <i class="heat-cell level-2"></i>
+        <i class="heat-cell level-3"></i>
+        <i class="heat-cell level-4"></i>
+        <span>多</span>
+      </div>
+    </section>
     {% endfor %}
   </div>
-  {% endfor %}
+  <div class="heatmap-tooltip" id="heatmap-tooltip" role="tooltip" hidden></div>
 </div>
 {% endmacro %}
 

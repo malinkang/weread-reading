@@ -4,6 +4,7 @@ from weread_site.model import (
     aggregate_entities,
     compute_heatmap,
     compute_stats,
+    compute_year_heatmaps,
     make_search_index,
     normalize_my_rating,
     normalize_progress,
@@ -108,3 +109,26 @@ def test_heatmap_has_53_weeks():
     cells = compute_heatmap([{"date": "2026-11-12", "seconds": 3600}])
     assert len(cells) == 371
     assert any(cell["seconds"] == 3600 for cell in cells)
+
+
+def test_year_heatmaps_support_switching_and_summarize_streaks():
+    years = compute_year_heatmaps(
+        [
+            {"date": "2025-12-31", "seconds": 1800},
+            {"date": "2026-01-01", "seconds": 3600},
+            {"date": "2026-01-02", "seconds": 7200},
+        ],
+        today=date(2026, 1, 3),
+    )
+    assert [item["year"] for item in years] == [2025, 2026]
+    current = years[-1]
+    assert current["active_days"] == 2
+    assert current["longest_streak"] == 2
+    assert current["reading_time"] == "3 小时"
+    assert all(len(week["cells"]) == 7 for week in current["weeks"])
+    assert current["weeks"][0]["month_label"] == "1月"
+    assert any(
+        cell and cell["date"] == "2026-01-04" and cell["future"]
+        for week in current["weeks"]
+        for cell in week["cells"]
+    )

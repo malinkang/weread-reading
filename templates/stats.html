@@ -38,14 +38,12 @@
 <section class="section">
   <div class="section-head">
     <div>
-      <p class="eyebrow">LAST 12 MONTHS</p>
+      <p class="eyebrow">READING CALENDAR</p>
       <h2>阅读热力图</h2>
     </div>
-    <span class="count-note">颜色越深，阅读时间越长</span>
+    <span class="count-note">按自然年查看 · 颜色越深，阅读时间越长</span>
   </div>
-  <div class="heatmap-wrap">
-    {{ macros.heatmap(heatmap_weeks) }}
-  </div>
+  {{ macros.heatmap(heatmap_years, heatmap_default_year) }}
 </section>
 
 <section class="section">

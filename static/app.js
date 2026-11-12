@@ -33,22 +33,68 @@
 
   var menuButton = document.getElementById("menu-button");
   var scrim = document.getElementById("nav-scrim");
+  var desktopQuery = window.matchMedia("(min-width: 901px)");
+
+  function isDesktop() {
+    return desktopQuery.matches;
+  }
+
+  function updateMenuButton() {
+    if (!menuButton) return;
+    var expanded;
+    var label;
+    if (isDesktop()) {
+      expanded = !root.classList.contains("sidebar-collapsed");
+      label = expanded ? "收起侧边栏" : "展开侧边栏";
+    } else {
+      expanded = body.classList.contains("nav-open");
+      label = expanded ? "关闭导航" : "打开导航";
+    }
+    menuButton.setAttribute("aria-expanded", String(expanded));
+    menuButton.setAttribute("aria-label", label);
+    menuButton.setAttribute("title", label);
+  }
+
+  function setSidebarCollapsed(collapsed, persist) {
+    root.classList.toggle("sidebar-collapsed", collapsed);
+    if (persist) {
+      try {
+        localStorage.setItem("weread.sidebar", collapsed ? "collapsed" : "expanded");
+      } catch (e) {}
+    }
+    updateMenuButton();
+  }
+
   function closeNav() {
     body.classList.remove("nav-open");
-    if (menuButton) menuButton.setAttribute("aria-expanded", "false");
     if (scrim) scrim.hidden = true;
+    updateMenuButton();
   }
   if (menuButton) {
     menuButton.addEventListener("click", function () {
-      var open = body.classList.toggle("nav-open");
-      menuButton.setAttribute("aria-expanded", String(open));
-      if (scrim) scrim.hidden = !open;
+      if (isDesktop()) {
+        setSidebarCollapsed(!root.classList.contains("sidebar-collapsed"), true);
+      } else {
+        var open = body.classList.toggle("nav-open");
+        if (scrim) scrim.hidden = !open;
+        updateMenuButton();
+      }
     });
   }
   if (scrim) scrim.addEventListener("click", closeNav);
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") closeNav();
   });
+  function syncResponsiveNav() {
+    if (isDesktop()) closeNav();
+    else updateMenuButton();
+  }
+  if (desktopQuery.addEventListener) {
+    desktopQuery.addEventListener("change", syncResponsiveNav);
+  } else if (desktopQuery.addListener) {
+    desktopQuery.addListener(syncResponsiveNav);
+  }
+  updateMenuButton();
 
   function normalize(value) {
     return String(value || "").toLowerCase().trim();

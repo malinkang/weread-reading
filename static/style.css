@@ -171,7 +171,7 @@ button, input, select { font: inherit; color: inherit; }
   padding: 0;
 }
 .icon-button:hover { color: var(--ink); background: var(--surface-2); }
-.menu-button { display: none; }
+.menu-button { display: inline-grid; }
 .theme-button .moon { display: none; }
 html[data-theme="dark"] .theme-button .sun { display: none; }
 html[data-theme="dark"] .theme-button .moon { display: block; }
@@ -183,6 +183,26 @@ html[data-theme="dark"] .theme-button .moon { display: block; }
   grid-template-columns: 218px minmax(0, 1fr);
   gap: 56px;
   padding: 38px 28px 84px;
+}
+
+@media (min-width: 901px) {
+  .shell {
+    transition: grid-template-columns .22s ease, gap .22s ease;
+  }
+  .sidebar {
+    transition: opacity .16s ease, transform .22s ease;
+  }
+  html.sidebar-collapsed .shell {
+    grid-template-columns: 0 minmax(0, 1fr);
+    gap: 0;
+  }
+  html.sidebar-collapsed .sidebar {
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-12px);
+    visibility: hidden;
+  }
 }
 
 .sidebar { position: relative; }

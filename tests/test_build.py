@@ -63,6 +63,34 @@ def test_base_path_is_applied(tmp_path: Path):
     ).read_text(encoding="utf-8")
 
 
+def test_sidebar_toggle_is_accessible_and_persistent(tmp_path: Path):
+    snapshot = tmp_path / "snapshot.json"
+    snapshot.write_text(
+        json.dumps(demo_snapshot(), ensure_ascii=False), encoding="utf-8"
+    )
+    output = tmp_path / "site"
+    build_site(
+        BuildConfig(
+            snapshot=snapshot,
+            output=output,
+            download_covers=False,
+            cover_cache=tmp_path / "covers",
+        )
+    )
+
+    home = (output / "index.html").read_text(encoding="utf-8")
+    assert 'id="menu-button"' in home
+    assert 'aria-controls="sidebar"' in home
+    assert 'aria-expanded="false"' in home
+    assert "weread.sidebar" in home
+
+    css = next((output / "assets").glob("style.*.css")).read_text(encoding="utf-8")
+    script = next((output / "assets").glob("app.*.js")).read_text(encoding="utf-8")
+    assert "sidebar-collapsed" in css
+    assert "sidebar-collapsed" in script
+    assert "weread.sidebar" in script
+
+
 def test_rebuild_cleans_stale_output_and_uses_absolute_og_images(tmp_path: Path):
     app_root = Path(__file__).resolve().parents[1]
     snapshot = tmp_path / "snapshot.json"

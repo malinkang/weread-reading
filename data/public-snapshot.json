@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-12T18:22:26+08:00",
+  "generated_at": "2026-11-13T08:00:51+08:00",
   "site": {
     "title": "读书记",
     "description": "我的微信读书书架，按阅读时间、评分和划线整理。",
@@ -11,12 +11,159 @@
     "books": 544,
     "highlights": 3721,
     "notes": 0,
-    "daily_records": 2237,
+    "daily_records": 2238,
     "book_daily_records": 290,
     "include_highlights": true,
     "include_reviews": false
   },
   "books": [
+    {
+      "source_id": "758867",
+      "slug": "1984-97772a",
+      "title": "1984",
+      "authors": [
+        "乔治·奥威尔"
+      ],
+      "categories": [
+        "文学-外国文学"
+      ],
+      "cover": "https://cdn.weread.qq.com/weread/cover/83/YueWen_758867/t6_YueWen_758867.jpg",
+      "isbn": "9787544741835",
+      "publisher": "",
+      "published": "",
+      "rating": 10.0,
+      "my_rating": 5,
+      "status": "finished",
+      "status_label": "读完",
+      "progress": 1.0,
+      "reading_seconds": 26924,
+      "reading_time_label": "7 小时 28 分钟",
+      "reading_days": 0,
+      "words": 0,
+      "price": null,
+      "intro": "《1984》是一部伟大的政治寓言。1984年的世界被三个超级大国瓜分，三个国家之间战争不断，国家内部社会结构被彻底打破，均实行高度集权统治，以改变历史、改变语言、打破家庭等极端手段钳制人们的思想和本能，并用高科技手段监视控制人们的行为，以对领袖的个人崇拜和对国内外敌人的仇恨维持社会的运转。",
+      "link": "https://weread.qq.com/web/reader/4be320905b94534becfd24b",
+      "started_at": "2018-12-26",
+      "finished_at": "2019-04-25",
+      "last_read_at": "2026-11-12",
+      "highlight_count": 16,
+      "note_count": 0,
+      "chapter_count": 8,
+      "highlights": [
+        {
+          "kind": "highlight",
+          "text": "他用儿童式的小字体在纸上随意写着，一开始漏了大写，到最后连标点也不用了：",
+          "note": "",
+          "chapter": "1",
+          "created_at": "2018-09-20"
+        },
+        {
+          "kind": "highlight",
+          "text": "温斯顿·史密斯",
+          "note": "",
+          "chapter": "1",
+          "created_at": "2022-08-11"
+        },
+        {
+          "kind": "highlight",
+          "text": "现年三十九岁",
+          "note": "",
+          "chapter": "1",
+          "created_at": "2022-08-11"
+        },
+        {
+          "kind": "highlight",
+          "text": "他从口袋里掏出一枚二角五分钱的硬币，上面以小而清晰的字母压铸着同样的标语。硬币的另一面是老大哥的头像，即使在硬币上，那双眼睛也紧盯着你。硬币上，邮票上，书本封面上，旗帜上，还有烟盒包装上——无所不在。总是那双眼睛在盯着你，还有那声音在包围着你。不管睡觉还是醒着，工作还是吃饭，室内还是室外，洗澡还是在床上——无处可逃。除了头颅之内的几立方厘米，一切都不属于你自己。",
+          "note": "",
+          "chapter": "2",
+          "created_at": "2022-11-26"
+        },
+        {
+          "kind": "highlight",
+          "text": "又琢磨起他是在为谁而写日记。为了未来，为了过去——为了一个可能是子虚乌有的时代。摆在他面前的不是死亡，而是毁灭。日记将被烧成灰，他自己也将被蒸发掉。只有思想警察会读到他所写的东西，然后他们会把它销毁，接着又从记忆中把它清除。当你的一切痕迹，甚至是不具名地在纸上划拉下的字迹都不可能实际存在时，你又怎能向未来呼吁？",
+          "note": "",
+          "chapter": "2",
+          "created_at": "2022-11-26"
+        },
+        {
+          "kind": "highlight",
+          "text": "他站在平整而且富有弹性的草地上。在一个夏日的傍晚，斜阳将这片土地镀上金色。他此时看到的景色经常出现在他的梦境中，以至于他从来拿不准是否在现实世界里见过。醒后回想时，他称之为黄金乡。那是个被野兔啃咬的老草场，一条步行小径蜿蜒穿过，鼹鼠丘处处可见。在草场对面参差不齐的树篱那边，榆树枝在和风中极其轻微地晃动，树叶只是抖动着，很厚实的一大团一大团，像女人的秀发。在近在咫尺的某处，虽然看不见，有条缓缓流动的清澈溪流。那里，在柳树下方，鲮鱼在池塘里游着。",
+          "note": "",
+          "chapter": "3",
+          "created_at": "2019-01-03"
+        },
+        {
+          "kind": "highlight",
+          "text": "如果所有档案上都记录着同样的说法——那么谎言就会进入历史并成为事实。",
+          "note": "",
+          "chapter": "3",
+          "created_at": "2019-01-08"
+        },
+        {
+          "kind": "highlight",
+          "text": "奥吉维",
+          "note": "",
+          "chapter": "4",
+          "created_at": "2022-11-26"
+        },
+        {
+          "kind": "highlight",
+          "text": "威瑟斯",
+          "note": "",
+          "chapter": "4",
+          "created_at": "2022-11-26"
+        },
+        {
+          "kind": "highlight",
+          "text": "狄洛森",
+          "note": "",
+          "chapter": "4",
+          "created_at": "2022-11-26"
+        },
+        {
+          "kind": "highlight",
+          "text": "兄弟会",
+          "note": "",
+          "chapter": "5",
+          "created_at": "2022-08-11"
+        },
+        {
+          "kind": "highlight",
+          "text": "茱莉娅",
+          "note": "",
+          "chapter": "5",
+          "created_at": "2022-08-11"
+        },
+        {
+          "kind": "highlight",
+          "text": "大氅",
+          "note": "",
+          "chapter": "7",
+          "created_at": "2019-01-08"
+        },
+        {
+          "kind": "highlight",
+          "text": "群众和动物是自由的",
+          "note": "",
+          "chapter": "7",
+          "created_at": "2019-01-08"
+        },
+        {
+          "kind": "highlight",
+          "text": "这些是你们将看到的仅有的结果，任何可见的变化在我们这辈子里都不可能看到。我们是死了的人，我们真正的生命在于未来。我们会仅仅以几捧尘土、几块骨头参与到未来，然而未来有多远不得而知，可能在一千年后",
+          "note": "",
+          "chapter": "8",
+          "created_at": "2019-04-15"
+        },
+        {
+          "kind": "highlight",
+          "text": "他表达的是一种对于人类未来近乎绝望的情绪，同时也预兆，除非历史的进程改变，否则全世界的人都会在不知不觉中失去大部分人类的特质，变成没有灵魂的机器人。",
+          "note": "",
+          "chapter": "代译序",
+          "created_at": "2022-11-26"
+        }
+      ]
+    },
     {
       "source_id": "CB_FAhC6lC4w52Z76Z75O3ej7X1",
       "slug": "hello-algo-1-3-0-zh-python-7d1d62",
@@ -24461,153 +24608,6 @@
       ]
     },
     {
-      "source_id": "758867",
-      "slug": "1984-97772a",
-      "title": "1984",
-      "authors": [
-        "乔治·奥威尔"
-      ],
-      "categories": [
-        "文学-外国文学"
-      ],
-      "cover": "https://cdn.weread.qq.com/weread/cover/83/YueWen_758867/t6_YueWen_758867.jpg",
-      "isbn": "9787544741835",
-      "publisher": "",
-      "published": "",
-      "rating": 10.0,
-      "my_rating": 5,
-      "status": "finished",
-      "status_label": "读完",
-      "progress": 1.0,
-      "reading_seconds": 26641,
-      "reading_time_label": "7 小时 24 分钟",
-      "reading_days": 0,
-      "words": 0,
-      "price": null,
-      "intro": "《1984》是一部伟大的政治寓言。1984年的世界被三个超级大国瓜分，三个国家之间战争不断，国家内部社会结构被彻底打破，均实行高度集权统治，以改变历史、改变语言、打破家庭等极端手段钳制人们的思想和本能，并用高科技手段监视控制人们的行为，以对领袖的个人崇拜和对国内外敌人的仇恨维持社会的运转。",
-      "link": "https://weread.qq.com/web/reader/4be320905b94534becfd24b",
-      "started_at": "2018-12-26",
-      "finished_at": "2019-04-25",
-      "last_read_at": "2023-04-17",
-      "highlight_count": 16,
-      "note_count": 0,
-      "chapter_count": 8,
-      "highlights": [
-        {
-          "kind": "highlight",
-          "text": "他用儿童式的小字体在纸上随意写着，一开始漏了大写，到最后连标点也不用了：",
-          "note": "",
-          "chapter": "1",
-          "created_at": "2018-09-20"
-        },
-        {
-          "kind": "highlight",
-          "text": "温斯顿·史密斯",
-          "note": "",
-          "chapter": "1",
-          "created_at": "2022-08-11"
-        },
-        {
-          "kind": "highlight",
-          "text": "现年三十九岁",
-          "note": "",
-          "chapter": "1",
-          "created_at": "2022-08-11"
-        },
-        {
-          "kind": "highlight",
-          "text": "他从口袋里掏出一枚二角五分钱的硬币，上面以小而清晰的字母压铸着同样的标语。硬币的另一面是老大哥的头像，即使在硬币上，那双眼睛也紧盯着你。硬币上，邮票上，书本封面上，旗帜上，还有烟盒包装上——无所不在。总是那双眼睛在盯着你，还有那声音在包围着你。不管睡觉还是醒着，工作还是吃饭，室内还是室外，洗澡还是在床上——无处可逃。除了头颅之内的几立方厘米，一切都不属于你自己。",
-          "note": "",
-          "chapter": "2",
-          "created_at": "2022-11-26"
-        },
-        {
-          "kind": "highlight",
-          "text": "又琢磨起他是在为谁而写日记。为了未来，为了过去——为了一个可能是子虚乌有的时代。摆在他面前的不是死亡，而是毁灭。日记将被烧成灰，他自己也将被蒸发掉。只有思想警察会读到他所写的东西，然后他们会把它销毁，接着又从记忆中把它清除。当你的一切痕迹，甚至是不具名地在纸上划拉下的字迹都不可能实际存在时，你又怎能向未来呼吁？",
-          "note": "",
-          "chapter": "2",
-          "created_at": "2022-11-26"
-        },
-        {
-          "kind": "highlight",
-          "text": "他站在平整而且富有弹性的草地上。在一个夏日的傍晚，斜阳将这片土地镀上金色。他此时看到的景色经常出现在他的梦境中，以至于他从来拿不准是否在现实世界里见过。醒后回想时，他称之为黄金乡。那是个被野兔啃咬的老草场，一条步行小径蜿蜒穿过，鼹鼠丘处处可见。在草场对面参差不齐的树篱那边，榆树枝在和风中极其轻微地晃动，树叶只是抖动着，很厚实的一大团一大团，像女人的秀发。在近在咫尺的某处，虽然看不见，有条缓缓流动的清澈溪流。那里，在柳树下方，鲮鱼在池塘里游着。",
-          "note": "",
-          "chapter": "3",
-          "created_at": "2019-01-03"
-        },
-        {
-          "kind": "highlight",
-          "text": "如果所有档案上都记录着同样的说法——那么谎言就会进入历史并成为事实。",
-          "note": "",
-          "chapter": "3",
-          "created_at": "2019-01-08"
-        },
-        {
-          "kind": "highlight",
-          "text": "奥吉维",
-          "note": "",
-          "chapter": "4",
-          "created_at": "2022-11-26"
-        },
-        {
-          "kind": "highlight",
-          "text": "威瑟斯",
-          "note": "",
-          "chapter": "4",
-          "created_at": "2022-11-26"
-        },
-        {
-          "kind": "highlight",
-          "text": "狄洛森",
-          "note": "",
-          "chapter": "4",
-          "created_at": "2022-11-26"
-        },
-        {
-          "kind": "highlight",
-          "text": "兄弟会",
-          "note": "",
-          "chapter": "5",
-          "created_at": "2022-08-11"
-        },
-        {
-          "kind": "highlight",
-          "text": "茱莉娅",
-          "note": "",
-          "chapter": "5",
-          "created_at": "2022-08-11"
-        },
-        {
-          "kind": "highlight",
-          "text": "大氅",
-          "note": "",
-          "chapter": "7",
-          "created_at": "2019-01-08"
-        },
-        {
-          "kind": "highlight",
-          "text": "群众和动物是自由的",
-          "note": "",
-          "chapter": "7",
-          "created_at": "2019-01-08"
-        },
-        {
-          "kind": "highlight",
-          "text": "这些是你们将看到的仅有的结果，任何可见的变化在我们这辈子里都不可能看到。我们是死了的人，我们真正的生命在于未来。我们会仅仅以几捧尘土、几块骨头参与到未来，然而未来有多远不得而知，可能在一千年后",
-          "note": "",
-          "chapter": "8",
-          "created_at": "2019-04-15"
-        },
-        {
-          "kind": "highlight",
-          "text": "他表达的是一种对于人类未来近乎绝望的情绪，同时也预兆，除非历史的进程改变，否则全世界的人都会在不知不觉中失去大部分人类的特质，变成没有灵魂的机器人。",
-          "note": "",
-          "chapter": "代译序",
-          "created_at": "2022-11-26"
-        }
-      ]
-    },
-    {
       "source_id": "23355045",
       "slug": "man-chang-de-gao-bie-du-ke-san-ge-quan-jing-dian-wen-ku-867a22",
       "title": "漫长的告别（读客三个圈经典文库）",
@@ -38316,7 +38316,7 @@
       "name": "乔治·奥威尔",
       "slug": "qiao-zhi-ao-wei-er",
       "books": 2,
-      "seconds": 43018
+      "seconds": 43301
     },
     {
       "name": "莎伦·莱希特",
@@ -41558,7 +41558,7 @@
       "name": "文学-外国文学",
       "slug": "wen-xue-wai-guo-wen-xue",
       "books": 52,
-      "seconds": 734335
+      "seconds": 734618
     },
     {
       "name": "计算机-计算机综合",
@@ -50983,6 +50983,10 @@
     {
       "date": "2026-11-11",
       "seconds": 480
+    },
+    {
+      "date": "2026-11-12",
+      "seconds": 317
     }
   ],
   "stats": {
@@ -50990,9 +50994,9 @@
     "finished": 111,
     "reading": 404,
     "want": 29,
-    "reading_seconds": 4270846,
-    "reading_time_label": "1186 小时 20 分钟",
-    "unique_reading_days": 2237,
+    "reading_seconds": 4271129,
+    "reading_time_label": "1186 小时 25 分钟",
+    "unique_reading_days": 2238,
     "highlights": 3721,
     "notes": 0,
     "words": 0,
@@ -51051,7 +51055,7 @@
       },
       {
         "year": 2026,
-        "seconds": 900410,
+        "seconds": 900727,
         "finished": 4
       }
     ],
@@ -51060,7 +51064,7 @@
         "name": "文学-外国文学",
         "slug": "wen-xue-wai-guo-wen-xue",
         "books": 52,
-        "seconds": 734335
+        "seconds": 734618
       },
       {
         "name": "计算机-编程设计",
@@ -53834,15 +53838,15 @@
       },
       {
         "date": "2026-11-12",
-        "seconds": 0,
-        "level": 0,
+        "seconds": 317,
+        "level": 1,
         "future": false
       },
       {
         "date": "2026-11-13",
         "seconds": 0,
         "level": 0,
-        "future": true
+        "future": false
       },
       {
         "date": "2026-11-14",

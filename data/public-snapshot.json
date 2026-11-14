@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-14T08:14:45+08:00",
+  "generated_at": "2026-11-15T06:54:39+08:00",
   "site": {
     "title": "读书记",
     "description": "我的微信读书书架，按阅读时间、评分和划线整理。",
@@ -11,12 +11,67 @@
     "books": 544,
     "highlights": 3721,
     "notes": 0,
-    "daily_records": 2239,
+    "daily_records": 2240,
     "book_daily_records": 290,
     "include_highlights": true,
     "include_reviews": false
   },
   "books": [
+    {
+      "source_id": "907771",
+      "slug": "hei-ke-yu-hua-jia-wan-ce-ji-nian-ban-556a28",
+      "title": "黑客与画家（10万册纪念版）",
+      "authors": [
+        "保罗·格雷厄姆"
+      ],
+      "categories": [
+        "文学-散文杂著"
+      ],
+      "cover": "https://wfqqreader-1252317822.image.myqcloud.com/cover/771/907771/t6_907771.jpg",
+      "isbn": "9787115590862",
+      "publisher": "",
+      "published": "",
+      "rating": 10.0,
+      "my_rating": null,
+      "status": "reading",
+      "status_label": "在读",
+      "progress": 0.77,
+      "reading_seconds": 2773,
+      "reading_time_label": "46 分钟",
+      "reading_days": 1,
+      "words": 0,
+      "price": null,
+      "intro": "你无须改变太多，也能活出精彩一生。这是保罗给我们的心理安抚，同时他也用自己在世俗意义上的成功，明白地告诉我们这件事在现实世界的可行性。这是我们可以从阅读这本书的过程中得到的重要启示之一。而从内容层面来看，在这本充满了洞见的书里，保罗以黑客之眼和画家之心，为我们揭示了这个世界为何拥有今日之面貌，并预言了它的未来。在保罗眼里，黑客是创作者，是互联网之子，拥有一颗不安分的心，虽然经常被视为书呆子，却以自己的努力，为互联网新世界奠基。毫无疑问，我们生活于其中的世界，已经且必将继续被黑客深刻地改变，因此，了解黑客，我们也会更了解这个世界。在本书中，作者和我们谈论了与黑客有关的三个方面：第一，黑客如何成长及看待世界；第二，黑客如何工作及影响世界；第三，黑客的工具和工作方法。事实上，在全部15篇文章中，保罗所探讨的内容远远超出了黑客所关注的内容，并以幽默的笔触，在最广泛的可能性上展现了他对于人人关心且受其影响的重大议题的思考。不管是创造财富，还是如何设计出好产品，抑或如何在充满了异见的世界里自洽地活着。可以说，不管我们处在人生的什么阶段，都将从阅读本书的过程中得到启示。",
+      "link": "https://weread.qq.com/web/reader/5b9328f05dd9fb5b922d1eb",
+      "started_at": "2019-12-19",
+      "finished_at": null,
+      "last_read_at": "2026-11-14",
+      "highlight_count": 2,
+      "note_count": 0,
+      "chapter_count": 2,
+      "highlights": [
+        {
+          "kind": "highlight",
+          "text": "罗伯特·莫里斯",
+          "note": "",
+          "chapter": "12 拒绝平庸",
+          "created_at": "2019-12-19"
+        },
+        {
+          "kind": "highlight",
+          "text": "1995年的初夏",
+          "note": "",
+          "chapter": "保罗·格雷厄姆其人其事",
+          "created_at": "2019-12-19"
+        }
+      ],
+      "reading_daily": [
+        {
+          "date": "2026-11-14",
+          "seconds": 109
+        }
+      ]
+    },
     {
       "source_id": "758867",
       "slug": "1984-97772a",
@@ -25864,61 +25919,6 @@
       ]
     },
     {
-      "source_id": "907771",
-      "slug": "hei-ke-yu-hua-jia-wan-ce-ji-nian-ban-556a28",
-      "title": "黑客与画家（10万册纪念版）",
-      "authors": [
-        "保罗·格雷厄姆"
-      ],
-      "categories": [
-        "文学-散文杂著"
-      ],
-      "cover": "https://wfqqreader-1252317822.image.myqcloud.com/cover/771/907771/t6_907771.jpg",
-      "isbn": "9787115590862",
-      "publisher": "",
-      "published": "",
-      "rating": 10.0,
-      "my_rating": null,
-      "status": "reading",
-      "status_label": "在读",
-      "progress": 0.77,
-      "reading_seconds": 2664,
-      "reading_time_label": "44 分钟",
-      "reading_days": 1,
-      "words": 0,
-      "price": null,
-      "intro": "你无须改变太多，也能活出精彩一生。这是保罗给我们的心理安抚，同时他也用自己在世俗意义上的成功，明白地告诉我们这件事在现实世界的可行性。这是我们可以从阅读这本书的过程中得到的重要启示之一。而从内容层面来看，在这本充满了洞见的书里，保罗以黑客之眼和画家之心，为我们揭示了这个世界为何拥有今日之面貌，并预言了它的未来。在保罗眼里，黑客是创作者，是互联网之子，拥有一颗不安分的心，虽然经常被视为书呆子，却以自己的努力，为互联网新世界奠基。毫无疑问，我们生活于其中的世界，已经且必将继续被黑客深刻地改变，因此，了解黑客，我们也会更了解这个世界。在本书中，作者和我们谈论了与黑客有关的三个方面：第一，黑客如何成长及看待世界；第二，黑客如何工作及影响世界；第三，黑客的工具和工作方法。事实上，在全部15篇文章中，保罗所探讨的内容远远超出了黑客所关注的内容，并以幽默的笔触，在最广泛的可能性上展现了他对于人人关心且受其影响的重大议题的思考。不管是创造财富，还是如何设计出好产品，抑或如何在充满了异见的世界里自洽地活着。可以说，不管我们处在人生的什么阶段，都将从阅读本书的过程中得到启示。",
-      "link": "https://weread.qq.com/web/reader/5b9328f05dd9fb5b922d1eb",
-      "started_at": "2019-12-19",
-      "finished_at": null,
-      "last_read_at": "2023-02-13",
-      "highlight_count": 2,
-      "note_count": 0,
-      "chapter_count": 2,
-      "highlights": [
-        {
-          "kind": "highlight",
-          "text": "罗伯特·莫里斯",
-          "note": "",
-          "chapter": "12 拒绝平庸",
-          "created_at": "2019-12-19"
-        },
-        {
-          "kind": "highlight",
-          "text": "1995年的初夏",
-          "note": "",
-          "chapter": "保罗·格雷厄姆其人其事",
-          "created_at": "2019-12-19"
-        }
-      ],
-      "reading_daily": [
-        {
-          "date": "2023-02-13",
-          "seconds": 50
-        }
-      ]
-    },
-    {
       "source_id": "23303789",
       "slug": "zui-yu-fa-df52ab",
       "title": "罪与罚",
@@ -39270,7 +39270,7 @@
       "name": "保罗·格雷厄姆",
       "slug": "bao-luo-ge-lei-e-mu",
       "books": 1,
-      "seconds": 2664
+      "seconds": 2773
     },
     {
       "name": "凯文·凯利",
@@ -41570,7 +41570,7 @@
       "name": "文学-散文杂著",
       "slug": "wen-xue-san-wen-za-zhu",
       "books": 23,
-      "seconds": 251043
+      "seconds": 251152
     },
     {
       "name": "精品小说-社会小说",
@@ -50991,6 +50991,10 @@
     {
       "date": "2026-11-13",
       "seconds": 293
+    },
+    {
+      "date": "2026-11-14",
+      "seconds": 109
     }
   ],
   "stats": {
@@ -50998,9 +51002,9 @@
     "finished": 111,
     "reading": 404,
     "want": 29,
-    "reading_seconds": 4271129,
-    "reading_time_label": "1186 小时 25 分钟",
-    "unique_reading_days": 2239,
+    "reading_seconds": 4271238,
+    "reading_time_label": "1186 小时 27 分钟",
+    "unique_reading_days": 2240,
     "highlights": 3721,
     "notes": 0,
     "words": 0,
@@ -51059,7 +51063,7 @@
       },
       {
         "year": 2026,
-        "seconds": 901020,
+        "seconds": 901129,
         "finished": 4
       }
     ],
@@ -51086,7 +51090,7 @@
         "name": "文学-散文杂著",
         "slug": "wen-xue-san-wen-za-zhu",
         "books": 23,
-        "seconds": 251043
+        "seconds": 251152
       },
       {
         "name": "精品小说-科幻小说",
@@ -51632,48 +51636,6 @@
       }
     ],
     "heatmap": [
-      {
-        "date": "2025-11-09",
-        "seconds": 2758,
-        "level": 1,
-        "future": false
-      },
-      {
-        "date": "2025-11-10",
-        "seconds": 624,
-        "level": 1,
-        "future": false
-      },
-      {
-        "date": "2025-11-11",
-        "seconds": 468,
-        "level": 1,
-        "future": false
-      },
-      {
-        "date": "2025-11-12",
-        "seconds": 354,
-        "level": 1,
-        "future": false
-      },
-      {
-        "date": "2025-11-13",
-        "seconds": 276,
-        "level": 1,
-        "future": false
-      },
-      {
-        "date": "2025-11-14",
-        "seconds": 895,
-        "level": 1,
-        "future": false
-      },
-      {
-        "date": "2025-11-15",
-        "seconds": 9240,
-        "level": 1,
-        "future": false
-      },
       {
         "date": "2025-11-16",
         "seconds": 3803,
@@ -53854,9 +53816,51 @@
       },
       {
         "date": "2026-11-14",
+        "seconds": 109,
+        "level": 1,
+        "future": false
+      },
+      {
+        "date": "2026-11-15",
         "seconds": 0,
         "level": 0,
         "future": false
+      },
+      {
+        "date": "2026-11-16",
+        "seconds": 0,
+        "level": 0,
+        "future": true
+      },
+      {
+        "date": "2026-11-17",
+        "seconds": 0,
+        "level": 0,
+        "future": true
+      },
+      {
+        "date": "2026-11-18",
+        "seconds": 0,
+        "level": 0,
+        "future": true
+      },
+      {
+        "date": "2026-11-19",
+        "seconds": 0,
+        "level": 0,
+        "future": true
+      },
+      {
+        "date": "2026-11-20",
+        "seconds": 0,
+        "level": 0,
+        "future": true
+      },
+      {
+        "date": "2026-11-21",
+        "seconds": 0,
+        "level": 0,
+        "future": true
       }
     ]
   }

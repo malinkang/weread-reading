@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-13T08:00:51+08:00",
+  "generated_at": "2026-11-14T08:14:45+08:00",
   "site": {
     "title": "读书记",
     "description": "我的微信读书书架，按阅读时间、评分和划线整理。",
@@ -11,7 +11,7 @@
     "books": 544,
     "highlights": 3721,
     "notes": 0,
-    "daily_records": 2238,
+    "daily_records": 2239,
     "book_daily_records": 290,
     "include_highlights": true,
     "include_reviews": false
@@ -50987,6 +50987,10 @@
     {
       "date": "2026-11-12",
       "seconds": 317
+    },
+    {
+      "date": "2026-11-13",
+      "seconds": 293
     }
   ],
   "stats": {
@@ -50996,7 +51000,7 @@
     "want": 29,
     "reading_seconds": 4271129,
     "reading_time_label": "1186 小时 25 分钟",
-    "unique_reading_days": 2238,
+    "unique_reading_days": 2239,
     "highlights": 3721,
     "notes": 0,
     "words": 0,
@@ -51055,7 +51059,7 @@
       },
       {
         "year": 2026,
-        "seconds": 900727,
+        "seconds": 901020,
         "finished": 4
       }
     ],
@@ -53844,15 +53848,15 @@
       },
       {
         "date": "2026-11-13",
-        "seconds": 0,
-        "level": 0,
+        "seconds": 293,
+        "level": 1,
         "future": false
       },
       {
         "date": "2026-11-14",
         "seconds": 0,
         "level": 0,
-        "future": true
+        "future": false
       }
     ]
   }

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-16T07:21:37+08:00",
+  "generated_at": "2026-11-17T10:22:10+08:00",
   "site": {
     "title": "读书记",
     "description": "我的微信读书书架，按阅读时间、评分和划线整理。",
@@ -11,12 +11,136 @@
     "books": 544,
     "highlights": 3721,
     "notes": 0,
-    "daily_records": 2241,
-    "book_daily_records": 290,
+    "daily_records": 2242,
+    "book_daily_records": 289,
     "include_highlights": true,
     "include_reviews": false
   },
   "books": [
+    {
+      "source_id": "3300067776",
+      "slug": "ming-liang-de-ye-wan-4fde26",
+      "title": "明亮的夜晚",
+      "authors": [
+        "崔恩荣"
+      ],
+      "categories": [
+        "精品小说-女性小说"
+      ],
+      "cover": "https://cdn.weread.qq.com/weread/cover/50/cpplatform_dzcupluzwjbcszj1zes4a9/t6_cpplatform_dzcupluzwjbcszj1zes4a91692182630.jpg",
+      "isbn": "9787516835265",
+      "publisher": "",
+      "published": "",
+      "rating": 10.0,
+      "my_rating": null,
+      "status": "reading",
+      "status_label": "在读",
+      "progress": 0.68,
+      "reading_seconds": 27092,
+      "reading_time_label": "7 小时 31 分钟",
+      "reading_days": 0,
+      "words": 0,
+      "price": null,
+      "intro": "和丈夫离婚后，三十一岁的我独自来到海边小城熙岭，却在那里邂逅多年未见的祖母。尴尬和沉默之后，孤独的心一点点靠近，我和祖母成为相互倾吐心声的朋友。在祖母家老屋的旧相册里，我发现一位和我长相非常相似的女子，依偎在少女时代的祖母身旁。 一个个鲜活的面孔逐渐从一张张黑白相片中，从一封封感人至深的书信中，从久远的回忆里，穿过女人生如飘萍、命如草芥的时代，走到我面前。 经过曾祖母、祖母和母亲，来到我身边的故事， 她们的人生在我的眼前重现。 现在的我能够触及她们吗? 正如过去无数的我组成了现在的我， 现在的我也能见到过去的无数个我吗？",
+      "link": "https://weread.qq.com/web/reader/2db32930813ab80f9g0165a3",
+      "started_at": "2024-03-15",
+      "finished_at": null,
+      "last_read_at": "2026-11-16",
+      "highlight_count": 7,
+      "note_count": 0,
+      "chapter_count": 5,
+      "highlights": [
+        {
+          "kind": "highlight",
+          "text": "小孩子都鬼得很，他们一眼就能感觉出，这个人喜不喜欢自己，是会伤害自己，还是会疼爱自己。",
+          "note": "",
+          "chapter": "1",
+          "created_at": "2026-01-07"
+        },
+        {
+          "kind": "highlight",
+          "text": "如果心是一个可以从人体中取出的器官，我想把手伸进胸膛，把它取出来。我要用温水将它洗干净，用毛巾擦干水汽，晾到阳光充足、通风良好的地方。这期间我将作为无心之人生活，直到我的心被晾干了，软软的，重新散发出好闻的香气，再把它重新装回胸膛。这样就可以重新开始了吧。",
+          "note": "",
+          "chapter": "1",
+          "created_at": "2026-01-09"
+        },
+        {
+          "kind": "highlight",
+          "text": "不要评价发生的事情，也不要反抗，要直接接受。这就是活下去的方法",
+          "note": "",
+          "chapter": "3",
+          "created_at": "2026-01-18"
+        },
+        {
+          "kind": "highlight",
+          "text": "“我一天吃的药都有一大把，但是我不想和你说那些话。那种话你不嫌烦吗？我不喜欢老了以后对孙女喊这里疼那里疼的，我不要做那样的祖母。我只想和你聊有趣的话题。”",
+          "note": "",
+          "chapter": "4",
+          "created_at": "2026-01-19"
+        },
+        {
+          "kind": "highlight",
+          "text": "有些人就是会毫无缘故地讨厌我，但也有些人会毫无缘故地爱我",
+          "note": "",
+          "chapter": "6",
+          "created_at": "2026-01-24"
+        },
+        {
+          "kind": "highlight",
+          "text": "没有预期恢复得好，这让我很不安。我强迫自己一定要过得比离婚前更好，更幸福。这期间，“过得好就是最好的报复”“好好生活让他羡慕”等声音，最初仿佛轻拍我后背的抚慰，最后却变成抽打我的鞭子。",
+          "note": "",
+          "chapter": "8",
+          "created_at": "2026-02-08"
+        },
+        {
+          "kind": "highlight",
+          "text": "三岁的时候，我和曾祖母、祖母还有妈妈，一起待在如今已成为一片空地的这里。我们一起吃饭，一起睡觉，还一起欢笑过吧。我还能回想起三岁时我住过的祖母的房子，还有一直形影不离的姐姐的样子。",
+          "note": "",
+          "chapter": "8",
+          "created_at": "2026-02-13"
+        }
+      ]
+    },
+    {
+      "source_id": "3300180461",
+      "slug": "zai-liu-fang-di-053379",
+      "title": "在流放地",
+      "authors": [
+        "[奥]卡夫卡等"
+      ],
+      "categories": [
+        "文学-外国文学"
+      ],
+      "cover": "https://cdn.weread.qq.com/weread/cover/80/cpplatform_g2q7prwcselc7e9vtxqwjj/t6_cpplatform_g2q7prwcselc7e9vtxqwjj1764318036.jpg",
+      "isbn": "",
+      "publisher": "",
+      "published": "",
+      "rating": 10.0,
+      "my_rating": null,
+      "status": "reading",
+      "status_label": "在读",
+      "progress": 0.0,
+      "reading_seconds": 17,
+      "reading_time_label": "1 分钟",
+      "reading_days": 1,
+      "words": 0,
+      "price": null,
+      "intro": "在纷繁的现实中，总有人用文字揭开生命的孤独与荒诞。 卡夫卡的《在流放地》是全书的起点，一台冷酷的刑具，折射出制度与人性的荒谬；加缪的《局外人》探问存在的意义；契诃夫的《六号病房》则写尽日常里的荒凉与无声的呐喊…… 这些散落在世间的名篇，并非单独的孤岛，而像一条暗河，贯穿着现代人心灵深处的困惑与挣扎。它们共同勾勒出“在流放地”的精神图景：人在命运、欲望与社会规训中摇摆，却也因此更显鲜活。 这是一本值得反复翻阅的短篇合辑，也是一次凝视自我与世界的阅读之旅。",
+      "link": "https://weread.qq.com/web/reader/c0532360813abacfeg011fda",
+      "started_at": null,
+      "finished_at": null,
+      "last_read_at": "2026-11-16",
+      "highlight_count": 0,
+      "note_count": 0,
+      "chapter_count": 0,
+      "highlights": [],
+      "reading_daily": [
+        {
+          "date": "2026-11-16",
+          "seconds": 1583
+        }
+      ]
+    },
     {
       "source_id": "907771",
       "slug": "hei-ke-yu-hua-jia-wan-ce-ji-nian-ban-556a28",
@@ -1177,96 +1301,6 @@
       ]
     },
     {
-      "source_id": "3300067776",
-      "slug": "ming-liang-de-ye-wan-4fde26",
-      "title": "明亮的夜晚",
-      "authors": [
-        "崔恩荣"
-      ],
-      "categories": [
-        "精品小说-女性小说"
-      ],
-      "cover": "https://cdn.weread.qq.com/weread/cover/50/cpplatform_dzcupluzwjbcszj1zes4a9/t6_cpplatform_dzcupluzwjbcszj1zes4a91692182630.jpg",
-      "isbn": "9787516835265",
-      "publisher": "",
-      "published": "",
-      "rating": 10.0,
-      "my_rating": null,
-      "status": "reading",
-      "status_label": "在读",
-      "progress": 0.57,
-      "reading_seconds": 26235,
-      "reading_time_label": "7 小时 17 分钟",
-      "reading_days": 1,
-      "words": 0,
-      "price": null,
-      "intro": "和丈夫离婚后，三十一岁的我独自来到海边小城熙岭，却在那里邂逅多年未见的祖母。尴尬和沉默之后，孤独的心一点点靠近，我和祖母成为相互倾吐心声的朋友。在祖母家老屋的旧相册里，我发现一位和我长相非常相似的女子，依偎在少女时代的祖母身旁。 一个个鲜活的面孔逐渐从一张张黑白相片中，从一封封感人至深的书信中，从久远的回忆里，穿过女人生如飘萍、命如草芥的时代，走到我面前。 经过曾祖母、祖母和母亲，来到我身边的故事， 她们的人生在我的眼前重现。 现在的我能够触及她们吗? 正如过去无数的我组成了现在的我， 现在的我也能见到过去的无数个我吗？",
-      "link": "https://weread.qq.com/web/reader/2db32930813ab80f9g0165a3",
-      "started_at": "2024-03-15",
-      "finished_at": null,
-      "last_read_at": "2026-07-11",
-      "highlight_count": 7,
-      "note_count": 0,
-      "chapter_count": 5,
-      "highlights": [
-        {
-          "kind": "highlight",
-          "text": "小孩子都鬼得很，他们一眼就能感觉出，这个人喜不喜欢自己，是会伤害自己，还是会疼爱自己。",
-          "note": "",
-          "chapter": "1",
-          "created_at": "2026-01-07"
-        },
-        {
-          "kind": "highlight",
-          "text": "如果心是一个可以从人体中取出的器官，我想把手伸进胸膛，把它取出来。我要用温水将它洗干净，用毛巾擦干水汽，晾到阳光充足、通风良好的地方。这期间我将作为无心之人生活，直到我的心被晾干了，软软的，重新散发出好闻的香气，再把它重新装回胸膛。这样就可以重新开始了吧。",
-          "note": "",
-          "chapter": "1",
-          "created_at": "2026-01-09"
-        },
-        {
-          "kind": "highlight",
-          "text": "不要评价发生的事情，也不要反抗，要直接接受。这就是活下去的方法",
-          "note": "",
-          "chapter": "3",
-          "created_at": "2026-01-18"
-        },
-        {
-          "kind": "highlight",
-          "text": "“我一天吃的药都有一大把，但是我不想和你说那些话。那种话你不嫌烦吗？我不喜欢老了以后对孙女喊这里疼那里疼的，我不要做那样的祖母。我只想和你聊有趣的话题。”",
-          "note": "",
-          "chapter": "4",
-          "created_at": "2026-01-19"
-        },
-        {
-          "kind": "highlight",
-          "text": "有些人就是会毫无缘故地讨厌我，但也有些人会毫无缘故地爱我",
-          "note": "",
-          "chapter": "6",
-          "created_at": "2026-01-24"
-        },
-        {
-          "kind": "highlight",
-          "text": "没有预期恢复得好，这让我很不安。我强迫自己一定要过得比离婚前更好，更幸福。这期间，“过得好就是最好的报复”“好好生活让他羡慕”等声音，最初仿佛轻拍我后背的抚慰，最后却变成抽打我的鞭子。",
-          "note": "",
-          "chapter": "8",
-          "created_at": "2026-02-08"
-        },
-        {
-          "kind": "highlight",
-          "text": "三岁的时候，我和曾祖母、祖母还有妈妈，一起待在如今已成为一片空地的这里。我们一起吃饭，一起睡觉，还一起欢笑过吧。我还能回想起三岁时我住过的祖母的房子，还有一直形影不离的姐姐的样子。",
-          "note": "",
-          "chapter": "8",
-          "created_at": "2026-02-13"
-        }
-      ],
-      "reading_daily": [
-        {
-          "date": "2026-07-11",
-          "seconds": 347
-        }
-      ]
-    },
-    {
       "source_id": "36968021",
       "slug": "wei-ji-fen-de-li-liang-3126d0",
       "title": "微积分的力量",
@@ -1387,46 +1421,6 @@
         {
           "date": "2026-06-22",
           "seconds": 1409
-        }
-      ]
-    },
-    {
-      "source_id": "3300180461",
-      "slug": "zai-liu-fang-di-053379",
-      "title": "在流放地",
-      "authors": [
-        "[奥]卡夫卡等"
-      ],
-      "categories": [
-        "文学-外国文学"
-      ],
-      "cover": "https://cdn.weread.qq.com/weread/cover/80/cpplatform_g2q7prwcselc7e9vtxqwjj/t6_cpplatform_g2q7prwcselc7e9vtxqwjj1764318036.jpg",
-      "isbn": "",
-      "publisher": "",
-      "published": "",
-      "rating": 10.0,
-      "my_rating": null,
-      "status": "reading",
-      "status_label": "在读",
-      "progress": 0.0,
-      "reading_seconds": 13,
-      "reading_time_label": "1 分钟",
-      "reading_days": 1,
-      "words": 0,
-      "price": null,
-      "intro": "在纷繁的现实中，总有人用文字揭开生命的孤独与荒诞。 卡夫卡的《在流放地》是全书的起点，一台冷酷的刑具，折射出制度与人性的荒谬；加缪的《局外人》探问存在的意义；契诃夫的《六号病房》则写尽日常里的荒凉与无声的呐喊…… 这些散落在世间的名篇，并非单独的孤岛，而像一条暗河，贯穿着现代人心灵深处的困惑与挣扎。它们共同勾勒出“在流放地”的精神图景：人在命运、欲望与社会规训中摇摆，却也因此更显鲜活。 这是一本值得反复翻阅的短篇合辑，也是一次凝视自我与世界的阅读之旅。",
-      "link": "https://weread.qq.com/web/reader/c0532360813abacfeg011fda",
-      "started_at": null,
-      "finished_at": null,
-      "last_read_at": "2026-06-27",
-      "highlight_count": 0,
-      "note_count": 0,
-      "chapter_count": 0,
-      "highlights": [],
-      "reading_daily": [
-        {
-          "date": "2026-06-27",
-          "seconds": 4616
         }
       ]
     },
@@ -38703,6 +38697,12 @@
       "seconds": 27492
     },
     {
+      "name": "崔恩荣",
+      "slug": "cui-en-rong",
+      "books": 1,
+      "seconds": 27092
+    },
+    {
       "name": "R·P·费曼",
       "slug": "fei-man",
       "books": 1,
@@ -38725,12 +38725,6 @@
       "slug": "yang-jiang",
       "books": 1,
       "seconds": 26318
-    },
-    {
-      "name": "崔恩荣",
-      "slug": "cui-en-rong",
-      "books": 1,
-      "seconds": 26235
     },
     {
       "name": "贝姬·肯尼迪",
@@ -40497,6 +40491,12 @@
       "seconds": 19
     },
     {
+      "name": "[奥]卡夫卡等",
+      "slug": "ao-ka-fu-ka-deng",
+      "books": 1,
+      "seconds": 17
+    },
+    {
       "name": "斯蒂芬·沃尔弗拉姆",
       "slug": "si-di-fen-wo-er-fu-la-mu",
       "books": 1,
@@ -40579,12 +40579,6 @@
       "slug": "wang-jun",
       "books": 1,
       "seconds": 14
-    },
-    {
-      "name": "[奥]卡夫卡等",
-      "slug": "ao-ka-fu-ka-deng",
-      "books": 1,
-      "seconds": 13
     },
     {
       "name": "比尔·帕金斯",
@@ -41558,7 +41552,7 @@
       "name": "文学-外国文学",
       "slug": "wen-xue-wai-guo-wen-xue",
       "books": 52,
-      "seconds": 734618
+      "seconds": 734622
     },
     {
       "name": "计算机-计算机综合",
@@ -41894,7 +41888,7 @@
       "name": "精品小说-女性小说",
       "slug": "jing-pin-xiao-shuo-nv-xing-xiao-shuo",
       "books": 1,
-      "seconds": 26235
+      "seconds": 27092
     },
     {
       "name": "人物传记-财经人物",
@@ -50999,6 +50993,10 @@
     {
       "date": "2026-11-15",
       "seconds": 297
+    },
+    {
+      "date": "2026-11-16",
+      "seconds": 1583
     }
   ],
   "stats": {
@@ -51006,9 +51004,9 @@
     "finished": 111,
     "reading": 404,
     "want": 29,
-    "reading_seconds": 4271238,
-    "reading_time_label": "1186 小时 27 分钟",
-    "unique_reading_days": 2241,
+    "reading_seconds": 4272099,
+    "reading_time_label": "1186 小时 41 分钟",
+    "unique_reading_days": 2242,
     "highlights": 3721,
     "notes": 0,
     "words": 0,
@@ -51067,7 +51065,7 @@
       },
       {
         "year": 2026,
-        "seconds": 901426,
+        "seconds": 903009,
         "finished": 4
       }
     ],
@@ -51076,7 +51074,7 @@
         "name": "文学-外国文学",
         "slug": "wen-xue-wai-guo-wen-xue",
         "books": 52,
-        "seconds": 734618
+        "seconds": 734622
       },
       {
         "name": "计算机-编程设计",
@@ -51253,6 +51251,12 @@
         "seconds": 37227
       },
       {
+        "name": "精品小说-女性小说",
+        "slug": "jing-pin-xiao-shuo-nv-xing-xiao-shuo",
+        "books": 1,
+        "seconds": 27092
+      },
+      {
         "name": "个人成长-沟通表达",
         "slug": "ge-ren-cheng-zhang-gou-tong-biao-da",
         "books": 7,
@@ -51263,12 +51267,6 @@
         "slug": "ren-wu-zhuan-ji-wen-xue-jia",
         "books": 2,
         "seconds": 26346
-      },
-      {
-        "name": "精品小说-女性小说",
-        "slug": "jing-pin-xiao-shuo-nv-xing-xiao-shuo",
-        "books": 1,
-        "seconds": 26235
       },
       {
         "name": "心理-心理学研究",
@@ -53832,15 +53830,15 @@
       },
       {
         "date": "2026-11-16",
-        "seconds": 0,
-        "level": 0,
+        "seconds": 1583,
+        "level": 1,
         "future": false
       },
       {
         "date": "2026-11-17",
         "seconds": 0,
         "level": 0,
-        "future": true
+        "future": false
       },
       {
         "date": "2026-11-18",
